@@ -1,0 +1,29 @@
+.projects-container{
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin-top: 3vw;
+}
+
+.projects-title {
+    display: flex;
+    font-size: 2.45vw;
+    align-items: start;
+    margin-left: 7.5vw;
+    font-weight: bold;
+}
+
+.projects-inner{
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin: 0;
+}
+
+.inner-port-component {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: dense;
+    margin-top: 1vw;
+    height: calc(20vw * 5);
+}

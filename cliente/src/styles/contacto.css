@@ -1,0 +1,11 @@
+.contact-route-container {
+  display: grid;
+  grid-template-columns:repeat(2fr, 2fr);
+  padding: 0;
+  width: 100vw;
+}
+
+.inner-contact-route-container {
+  width: 50%;
+  margin: 0 auto;
+}

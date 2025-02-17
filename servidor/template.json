@@ -1,0 +1,128 @@
+[
+    {
+        "title": "Nombre del proyecto",
+        "link": "Direccion web del proyecto deployado, o en github en caso de no tener web",
+        "techs": "Un array de tecnologias, frameworks, etc, usados",
+        "collaborators": "Un string simple, o un array en caso de que haya 2 o mas colaboradores",
+        "description": "Breve descripcion del proyecto en cuestion",
+        "status": "puede ser: complete / incomplete / abandoned",
+        "publicationDate": "Dato del tipo Date"
+    },
+    {
+        "link": "https://alma-landing-page-aaltqmn35.vercel.app/",
+        "title": "Alma Landpage Project",
+        "techs": [
+            "React",
+            "JavaScript",
+            "CSS",
+            "HTML",
+            "Node.js"
+        ],
+        "collaborators": "Juan Braian Hernandez Morani",
+        "description": "",
+        "status": "complete",
+        "publicationDate": ""
+    },
+    {
+        "link": "https://todochallenge-two.vercel.app/",
+        "title": "Company skill test",
+        "techs": [
+            "React",
+            "JavaScript",
+            "CSS",
+            "HTML",
+            "Node.js",
+            "Express"
+        ],
+        "collaborators": "Juan Braian Hernandez Morani",
+        "description": "",
+        "status": "complete",
+        "publicationDate": ""
+    },
+    {
+        "link": "https://calculator-zeta-two-12.vercel.app/",
+        "title": "Personal CSS Utility",
+        "techs": [
+            "React",
+            "JavaScript",
+            "CSS",
+            "HTML"
+        ],
+        "collaborators": "Juan Braian Hernandez Morani",
+        "description": "",
+        "status": "complete",
+        "publicationDate": ""
+    },
+    {
+        "link": "https://github.com/JuanHernandezMorani/Perfect-Minecraft-rpg-1.19.2",
+        "title": "[RPG]Epic Adventures mod",
+        "techs": [
+            "Java",
+            "Shell"
+        ],
+        "collaborators": "Juan Braian Hernandez Morani",
+        "description": "",
+        "status": "complete",
+        "publicationDate": ""
+    },
+    {
+        "link": "https://henrybienesraices.vercel.app/",
+        "title": "Grupal Project - Henry real-estate",
+        "techs": [
+            "VueJS",
+            "JavaScript",
+            "SCSS",
+            "HTML",
+            "Node.js",
+            "Express",
+            "Figma",
+            "Trello",
+            "Git"
+        ],
+        "collaborators": [
+            "Mariano Solis",
+            "Tomas Clementin",
+            "Juan Ferrari",
+            "Franco Camus",
+            "Enzo Ulloa",
+            "Bautista Moreiro",
+            "Agustin Benitez",
+            "Juan Braian Hernandez Morani"
+        ],
+        "description": "",
+        "status": "complete",
+        "publicationDate": ""
+    },
+    {
+        "link": "https://github.com/JuanHernandezMorani/PokemonPageProject",
+        "title": "Individual Project - Henry Pokemon",
+        "techs": [
+            "React",
+            "JavaScript",
+            "CSS",
+            "HTML",
+            "Node.js",
+            "Express"
+        ],
+        "collaborators": "Juan Braian Hernandez Morani",
+        "description": "",
+        "status": "complete",
+        "publicationDate": ""
+    },
+    {
+        "link": "https://github.com/JuanHernandezMorani/DogsProject",
+        "title": "Individual Project - Henry Dogs",
+        "techs": [
+            "React",
+            "JavaScript",
+            "CSS",
+            "HTML",
+            "Node.js",
+            "Express"
+        ],
+        "collaborators": "Juan Braian Hernandez Morani",
+        "description": "",
+        "status": "complete",
+        "publicationDate": ""
+    }
+]
