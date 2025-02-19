@@ -1,14 +1,15 @@
 import { React } from 'react';
+import { useSelector } from "react-redux";
 import '../styles/projects.css';
 import ProjectComponent from '../components/card/ProjectComponent.jsx';
 
 export default function Projects () {
-    const projects = null;
+    const projects = useSelector(state => state.OriginalProjects);
       
     function selectElement() {
         return (
             <div className="inner-port-component">
-              {projects.map((project, index) => (
+              {projects?.map((project, index) => (
                 <ProjectComponent
                   key={index}
                   project={project}

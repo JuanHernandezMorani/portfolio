@@ -13,7 +13,7 @@ let projectID = isEdit ? project.uuid : "NotCreatedYet"
     <div className="project-card" id={projectID}>
       <div className="project-image-container">
         {
-          isEdit ? <img src={projectImage} alt={`Thumbnail of ${project.title}`} className="img-fluid" /> : <div className="spinner"></div>
+          isEdit ? <img src={project.image} alt={`Thumbnail of ${project.title}`} className="img-fluid" /> : <div className="spinner"></div>
         }
       </div>
       <div className="project-details">

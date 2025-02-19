@@ -9,8 +9,9 @@
         "publicationDate": "Dato del tipo Date"
     },
     {
-        "link": "https://alma-landing-page-aaltqmn35.vercel.app/",
         "title": "Alma Landpage Project",
+        "link": "https://alma-landing-page.vercel.app/",
+        "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739931113/uploads/wnxycoyqwnwckcsusjsj.png",
         "techs": [
             "React",
             "JavaScript",
@@ -19,29 +20,14 @@
             "Node.js"
         ],
         "collaborators": "Juan Braian Hernandez Morani",
-        "description": "",
-        "status": "complete",
-        "publicationDate": ""
+        "description": "Landing page moderna y responsiva creada con React y Node.js. Implementa un diseño atractivo con CSS y HTML, enfocada en la presentación de un producto o servicio.",
+        "publicationDate": "2025-01-14T14:55:42.000Z",
+        "status": "complete"
     },
     {
-        "link": "https://todochallenge-two.vercel.app/",
-        "title": "Company skill test",
-        "techs": [
-            "React",
-            "JavaScript",
-            "CSS",
-            "HTML",
-            "Node.js",
-            "Express"
-        ],
-        "collaborators": "Juan Braian Hernandez Morani",
-        "description": "",
-        "status": "complete",
-        "publicationDate": ""
-    },
-    {
-        "link": "https://calculator-zeta-two-12.vercel.app/",
         "title": "Personal CSS Utility",
+        "link": "https://calculator-zeta-two-12.vercel.app/",
+        "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739931334/uploads/ojyg8ttyqz3cmo2lhtun.png",
         "techs": [
             "React",
             "JavaScript",
@@ -49,25 +35,30 @@
             "HTML"
         ],
         "collaborators": "Juan Braian Hernandez Morani",
-        "description": "",
-        "status": "complete",
-        "publicationDate": ""
+        "description": "Herramienta personalizada para cálculos y diseño con CSS. Permite probar estilos y generar configuraciones visuales con una interfaz sencilla en React.",
+        "publicationDate": "2025-01-28T10:37:44.000Z",
+        "status": "complete"
     },
     {
-        "link": "https://github.com/JuanHernandezMorani/Perfect-Minecraft-rpg-1.19.2",
         "title": "[RPG]Epic Adventures mod",
+        "link": "https://github.com/JuanHernandezMorani/Perfect-Minecraft-rpg-1.19.2",
+        "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739931367/uploads/daa41zganitwbq4xsdng.png",
         "techs": [
             "Java",
-            "Shell"
+            "Shell",
+            "BlochBench",
+            "JavaScript",
+            "Blender"
         ],
         "collaborators": "Juan Braian Hernandez Morani",
-        "description": "",
-        "status": "complete",
-        "publicationDate": ""
+        "description": "Mod de Minecraft con temática RPG que agrega nuevas mecánicas, estructuras y enemigos. Desarrollado en Java, optimizado para la versión 1.19.2.",
+        "publicationDate": "2023-05-28T23:34:40.000Z",
+        "status": "complete"
     },
     {
-        "link": "https://henrybienesraices.vercel.app/",
         "title": "Grupal Project - Henry real-estate",
+        "link": "https://henrybienesraices.vercel.app/",
+        "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739931974/uploads/vzqooopr2ol9nwc1tztd.png",
         "techs": [
             "VueJS",
             "JavaScript",
@@ -89,13 +80,14 @@
             "Agustin Benitez",
             "Juan Braian Hernandez Morani"
         ],
-        "description": "",
-        "status": "complete",
-        "publicationDate": ""
+        "description": "Plataforma web para bienes raíces desarrollada en equipo con VueJS y Node.js. Permite gestionar propiedades, búsquedas avanzadas y administración de usuarios.",
+        "publicationDate": "2023-04-28T19:04:23.000Z",
+        "status": "complete"
     },
     {
-        "link": "https://github.com/JuanHernandezMorani/PokemonPageProject",
         "title": "Individual Project - Henry Pokemon",
+        "link": "https://github.com/JuanHernandezMorani/PokemonPageProject",
+        "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739931428/uploads/mdexqxhxktmby9qnuukl.png",
         "techs": [
             "React",
             "JavaScript",
@@ -105,13 +97,14 @@
             "Express"
         ],
         "collaborators": "Juan Braian Hernandez Morani",
-        "description": "",
-        "status": "complete",
-        "publicationDate": ""
+        "description": "Aplicación web basada en Pokémon, donde los usuarios pueden buscar, filtrar y ver detalles de diferentes especies. Implementada con React y Express.",
+        "publicationDate": "2023-09-25T16:11:42.000Z",
+        "status": "complete"
     },
     {
-        "link": "https://github.com/JuanHernandezMorani/DogsProject",
         "title": "Individual Project - Henry Dogs",
+        "link": "https://github.com/JuanHernandezMorani/DogsProject",
+        "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739931461/uploads/lgbkmdjlyzrlxcbaqg5q.png",
         "techs": [
             "React",
             "JavaScript",
@@ -121,8 +114,25 @@
             "Express"
         ],
         "collaborators": "Juan Braian Hernandez Morani",
-        "description": "",
-        "status": "complete",
-        "publicationDate": ""
+        "description": "Proyecto web centrado en la búsqueda y filtrado de razas de perros. Permite visualizar información detallada de cada raza, con un backend en Node.js y Express.",
+        "publicationDate": "2023-09-25T16:19:50.000Z",
+        "status": "complete"
+    },
+    {
+        "title": "Company skill test",
+        "link": "https://todochallenge-two.vercel.app/",
+        "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739934233/uploads/fyehmk0ajbvxzyzqbdqd.png",
+        "techs": [
+            "React",
+            "JavaScript",
+            "CSS",
+            "HTML",
+            "Node.js",
+            "Express"
+        ],
+        "collaborators": "Juan Braian Hernandez Morani",
+        "description": "Aplicación de lista de tareas desarrollada como prueba técnica para una empresa. Utiliza React en el frontend y Express con Node.js en el backend.",
+        "publicationDate": "2023-10-26T10:00:00.000Z",
+        "status": "complete"
     }
 ]

@@ -1,12 +1,12 @@
-import '../styles/creationForm.css';
+import '../../styles/creationForm.css';
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from 'react-router-dom';
 import ProjectComponent from '../card/ProjectComponent.jsx';
-import { updatePost, getProjectDetail } from '../actions';
+import { createProject, updateProject, getProjectDetail } from '../../actions';
 import Swal from 'sweetalert2';
 
-const dateRegex = "^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$";
+const dateRegex = "^{4}(0?[1-9]|1[012])(0?[1-9]|[12][0-9]|3[01])$";
 const linkRegex = "^(https?:\\/\\/)?((([-a-z0-9]{1,63}\\.)*?[a-z0-9]([-a-z0-9]{0,253}[a-z0-9])?\\.[a-z]{2,63})|((\\d{1,3}\\.){3}\\d{1,3}))(:\\d{1,5})?((\\/|\\?)((%[0-9a-f]{2})|[-\\w\\+\\.\\?\\/@~#&=])*)?$";
 
 
@@ -29,7 +29,6 @@ export default function CreationForm({ projectUUID }) {
     const [errors, setErrors] = useState({});
     const { uuid } = useParams();
     const projectToEdit = projectUUID || uuid;
-    const details = useSelector(state => state.Details);
     const [projectData, setProjectData] = useState({
         title: 'undefined',
         link: 'undefined',
@@ -150,9 +149,9 @@ export default function CreationForm({ projectUUID }) {
     function handleSubmit(e) {
         e.preventDefault();
         let errors = validate(projectData);
-        if (!errors.title && !errors.link && !error.publicationDate) {
+        if (!errors.title && !errors.link && !errors.publicationDate) {
             if (!!projectToEdit) {
-                dispatch(updatePost(projectToEdit, projectData));
+                dispatch(updateProject(projectToEdit, projectData));
                 Swal.fire({
                     icon: 'success',
                     title: 'Proyecto actualizado con éxito',
@@ -161,7 +160,7 @@ export default function CreationForm({ projectUUID }) {
                 }).then(() => navigate('/'));
             }
             else {
-                dispatch(createPost(projectData));
+                dispatch(createProject(projectData));
                 Swal.fire({
                     icon: 'success',
                     title: 'Proyecto creado con éxito',

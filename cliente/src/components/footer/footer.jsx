@@ -1,21 +1,32 @@
 import React from "react";
+import github from '../../imgs/icons/github-mark.png';
+import linkedin from '../../imgs/icons/linkedin.png';
+import facebook from '../../imgs/icons/facebook.png';
+import instagram from '../../imgs/icons/instagram.png';
+import '../../styles/footer.css';
 
-export default function Footer () {
+export default function Footer() {
     return (
-        <div className="footer-container">
-                    <footer style={{ 
-                        display: "flex", 
-                        justifyContent: "space-between", 
-                        alignItems: "center", 
-                        marginTop: "40px", 
-                        padding: "10px 20px", 
-                        borderTop: "1px solid #ddd", 
-                        fontSize: "0.9rem", 
-                        color: "#6c757d" 
-                    }}>
+        <footer className="foot-container">
+            <div className="foot-inner-container">
+                <div className="footer-social-info">
+                    <div className="foot-icons-conteiner">
+                        <a href="https://www.linkedin.com/in/juan-hern%C3%A1ndez-morani/" target="_blank" rel="noopener noreferrer">
+                            <img src={linkedin} alt="LinkedIn" className="img-fluid" />
+                        </a>
+                        <a href="https://www.facebook.com/Juan.hernandez.morani.97" target="_blank" rel="noopener noreferrer">
+                            <img src={facebook} alt="Facebook" className="img-fluid" />
+                        </a>
+                        <a href="https://www.instagram.com/elchetomdq97/" target="_blank" rel="noopener noreferrer">
+                            <img src={instagram} alt="Instagram" className="img-fluid" />
+                        </a>
+                        <a href="https://github.com/JuanHernandezMorani" target="_blank" rel="noopener noreferrer">
+                            <img src={github} alt="Github" className="img-fluid" />
+                        </a>
                         <p>© Derechos reservados 2025</p>
-                        <img src={logo} alt="JBHM" style={{ width: "2vw", height: "2vw" }} />
-                    </footer>
+                    </div>
                 </div>
+            </div>
+        </footer>
     );
 }

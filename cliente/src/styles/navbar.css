@@ -1,92 +1,103 @@
 .active{
     background-color: #1d4ed8;
 }
-
-nav {
+.nav-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: #0f172a;
-    color: white;
-    position: sticky;
-    top: 0;
 }
 
-nav .title {
-    font-size: 1.5rem;
-    margin: 1rem;
+.title {
+    margin: 1vw;
+    font-size: 1.5vw;
     font-weight: bold;
     text-decoration: none;
     color: white;
+    white-space: nowrap;
 }
 
-nav ul {
+.nav-container ul {
     display: flex;
+    align-items: center;
 }
 
-nav ul li {
+.nav-container ul li {
    list-style: none; 
+   font-size: 1.2vw;
+   font-weight: lighter;
+   margin: 0 0.5vw;
+   text-align: center;
 }
 
-nav ul li a {
+.nav-container ul li a {
     display: block;
     text-decoration: none;
     color: white;
-    padding: 0.5rem;
-    margin: 0 0.5rem;
-    border-radius: 0.5rem;
+    border-radius: 0.5vw;
+    padding: 0.1vw 0.4vw;
 }
 
-nav ul li a:not(.active):hover {
+.nav-container ul li a:not(.active):hover {
     background-color:#172554 ;
 }
 
-nav .menu {
+.menu {
     display: none;
     position: absolute;
-    top: 0.75rem;
-    right: 0.5rem;
+    top: 0.75vw;
+    right: 0.5vw;
     flex-direction: column;
     justify-content: space-between;
-    width: 2.25rem;
-    height: 2rem;
+    width: 2.25vw;
+    height: 2vw;
 }
 
-nav .menu span {
-    height: 0.4rem;
+.menu span {
+    height: 0.4vw;
     width: 100%;
     background-color: #fff;
-    border-radius: 0.2rem;
+    border-radius: 0.2vw;
 }
 
 
 @media (max-width: 480px) {
-    nav .menu {
+    .menu {
         display: flex;
     }
 
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
+    .nav-container {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
     }
 
-    nav ul {
+    .nav-container ul {
         display: none;
         flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        margin-bottom: 0.25rem;
+        background-color: #0f172a;
+        z-index: 100;
     }
 
-    nav ul.open {
+    .nav-container ul.open {
         display: flex;
+        align-items: center;
+        padding: 0;
     }
 
-    nav ul li {
+    .nav-container ul.open li {
+        max-width: 6vw;
+        text-align: center;
+    }
+
+    .nav-container ul li {
         width: 100%;
         text-align: center;
     }
 
-    nav ul li a {
-        margin: 0.2rem 0.5rem;
+    .nav-container ul li a {
+        margin: 0.25vw 0;
     }
 }
