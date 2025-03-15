@@ -1,138 +1,143 @@
 [
     {
-        "title": "Nombre del proyecto",
-        "link": "Direccion web del proyecto deployado, o en github en caso de no tener web",
-        "techs": "Un array de tecnologias, frameworks, etc, usados",
-        "collaborators": "Un string simple, o un array en caso de que haya 2 o mas colaboradores",
-        "description": "Breve descripcion del proyecto en cuestion",
-        "status": "puede ser: complete / incomplete / abandoned",
-        "publicationDate": "Dato del tipo Date"
+      "id": 1,
+      "uuid": "82f713b1-21e5-4bf7-8d48-e56b1b93b57e",
+      "title": "Alma Landpage Project",
+      "link": "https://alma-landing-page.vercel.app/",
+      "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1742077312/uploads/ssjwu819uacymgms11iq.png",
+      "techs": [
+        "React",
+        "JavaScript",
+        "CSS",
+        "HTML",
+        "Node.js"
+      ],
+      "collaborators": "Juan Braian Hernandez Morani",
+      "description": "Modern and responsive landing page built with React and Node.js. Features an attractive design using CSS and HTML, focused on showcasing a product or service.",
+      "publicationDate": "2025-01-14T00:00:00.000Z",
+      "status": "complete"
     },
     {
-        "title": "Alma Landpage Project",
-        "link": "https://alma-landing-page.vercel.app/",
-        "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739931113/uploads/wnxycoyqwnwckcsusjsj.png",
-        "techs": [
-            "React",
-            "JavaScript",
-            "CSS",
-            "HTML",
-            "Node.js"
-        ],
-        "collaborators": "Juan Braian Hernandez Morani",
-        "description": "Landing page moderna y responsiva creada con React y Node.js. Implementa un diseño atractivo con CSS y HTML, enfocada en la presentación de un producto o servicio.",
-        "publicationDate": "2025-01-14T14:55:42.000Z",
-        "status": "complete"
+      "id": 2,
+      "uuid": "8bf8f34b-0026-476e-a87e-4b3d648bdcea",
+      "title": "Personal CSS Utility",
+      "link": "https://calculator-zeta-two-12.vercel.app/",
+      "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1742068057/uploads/lbhbjrkd2avsqxrflmww.png",
+      "techs": [
+        "React",
+        "JavaScript",
+        "CSS",
+        "HTML"
+      ],
+      "collaborators": "Juan Braian Hernandez Morani",
+      "description": "Custom tool for calculations and CSS design. Allows testing styles and generating visual configurations with a simple React-based interface.",
+      "publicationDate": "2025-01-28T00:00:00.000Z",
+      "status": "complete"
     },
     {
-        "title": "Personal CSS Utility",
-        "link": "https://calculator-zeta-two-12.vercel.app/",
-        "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739931334/uploads/ojyg8ttyqz3cmo2lhtun.png",
-        "techs": [
-            "React",
-            "JavaScript",
-            "CSS",
-            "HTML"
-        ],
-        "collaborators": "Juan Braian Hernandez Morani",
-        "description": "Herramienta personalizada para cálculos y diseño con CSS. Permite probar estilos y generar configuraciones visuales con una interfaz sencilla en React.",
-        "publicationDate": "2025-01-28T10:37:44.000Z",
-        "status": "complete"
+      "id": 3,
+      "uuid": "ffbfc73c-d161-4061-b7ba-8c86405e3ec6",
+      "title": "[RPG]Epic Adventures mod",
+      "link": "https://github.com/JuanHernandezMorani/Perfect-Minecraft-rpg-1.19.2",
+      "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739931367/uploads/daa41zganitwbq4xsdng.png",
+      "techs": [
+        "Java",
+        "Shell",
+        "BlochBench",
+        "JavaScript",
+        "Blender"
+      ],
+      "collaborators": "Juan Braian Hernandez Morani",
+      "description": "Minecraft RPG-themed mod that adds new mechanics, structures, and enemies. Developed in Java, optimized for version 1.19.2.",
+      "publicationDate": "2023-05-28T23:34:40.000Z",
+      "status": "complete"
     },
     {
-        "title": "[RPG]Epic Adventures mod",
-        "link": "https://github.com/JuanHernandezMorani/Perfect-Minecraft-rpg-1.19.2",
-        "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739931367/uploads/daa41zganitwbq4xsdng.png",
-        "techs": [
-            "Java",
-            "Shell",
-            "BlochBench",
-            "JavaScript",
-            "Blender"
-        ],
-        "collaborators": "Juan Braian Hernandez Morani",
-        "description": "Mod de Minecraft con temática RPG que agrega nuevas mecánicas, estructuras y enemigos. Desarrollado en Java, optimizado para la versión 1.19.2.",
-        "publicationDate": "2023-05-28T23:34:40.000Z",
-        "status": "complete"
+      "id": 4,
+      "uuid": "f4ab86db-1409-42e9-8319-84692ec2343a",
+      "title": "Grupal Project - Henry Real Estate",
+      "link": "https://henrybienesraices.vercel.app/",
+      "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739931974/uploads/vzqooopr2ol9nwc1tztd.png",
+      "techs": [
+        "VueJS",
+        "JavaScript",
+        "SCSS",
+        "HTML",
+        "Node.js",
+        "Express",
+        "Figma",
+        "Trello",
+        "Git"
+      ],
+      "collaborators": [
+        "Mariano Solis",
+        "Tomas Clementin",
+        "Juan Ferrari",
+        "Franco Camus",
+        "Enzo Ulloa",
+        "Bautista Moreiro",
+        "Agustin Benitez",
+        "Juan Braian Hernandez Morani"
+      ],
+      "description": "Real estate web platform developed by a team using VueJS and Node.js. Enables property management, advanced searches, and user administration.",
+      "publicationDate": "2023-04-28T19:04:23.000Z",
+      "status": "complete"
     },
     {
-        "title": "Grupal Project - Henry real-estate",
-        "link": "https://henrybienesraices.vercel.app/",
-        "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739931974/uploads/vzqooopr2ol9nwc1tztd.png",
-        "techs": [
-            "VueJS",
-            "JavaScript",
-            "SCSS",
-            "HTML",
-            "Node.js",
-            "Express",
-            "Figma",
-            "Trello",
-            "Git"
-        ],
-        "collaborators": [
-            "Mariano Solis",
-            "Tomas Clementin",
-            "Juan Ferrari",
-            "Franco Camus",
-            "Enzo Ulloa",
-            "Bautista Moreiro",
-            "Agustin Benitez",
-            "Juan Braian Hernandez Morani"
-        ],
-        "description": "Plataforma web para bienes raíces desarrollada en equipo con VueJS y Node.js. Permite gestionar propiedades, búsquedas avanzadas y administración de usuarios.",
-        "publicationDate": "2023-04-28T19:04:23.000Z",
-        "status": "complete"
+      "id": 5,
+      "uuid": "632febf4-0722-4893-a494-16e772ccb54d",
+      "title": "Individual Project - Henry Pokémon",
+      "link": "https://github.com/JuanHernandezMorani/PokemonPageProject",
+      "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739931428/uploads/mdexqxhxktmby9qnuukl.png",
+      "techs": [
+        "React",
+        "JavaScript",
+        "CSS",
+        "HTML",
+        "Node.js",
+        "Express"
+      ],
+      "collaborators": "Juan Braian Hernandez Morani",
+      "description": "Web application based on Pokémon, where users can search, filter, and view details of different species. Built with React and Express.",
+      "publicationDate": "2023-09-25T16:11:42.000Z",
+      "status": "complete"
     },
     {
-        "title": "Individual Project - Henry Pokemon",
-        "link": "https://github.com/JuanHernandezMorani/PokemonPageProject",
-        "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739931428/uploads/mdexqxhxktmby9qnuukl.png",
-        "techs": [
-            "React",
-            "JavaScript",
-            "CSS",
-            "HTML",
-            "Node.js",
-            "Express"
-        ],
-        "collaborators": "Juan Braian Hernandez Morani",
-        "description": "Aplicación web basada en Pokémon, donde los usuarios pueden buscar, filtrar y ver detalles de diferentes especies. Implementada con React y Express.",
-        "publicationDate": "2023-09-25T16:11:42.000Z",
-        "status": "complete"
+      "id": 6,
+      "uuid": "bc93fccd-5758-4616-8f1b-850944577b28",
+      "title": "Individual Project - Henry Dogs",
+      "link": "https://github.com/JuanHernandezMorani/DogsProject",
+      "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739931461/uploads/lgbkmdjlyzrlxcbaqg5q.png",
+      "techs": [
+        "React",
+        "JavaScript",
+        "CSS",
+        "HTML",
+        "Node.js",
+        "Express"
+      ],
+      "collaborators": "Juan Braian Hernandez Morani",
+      "description": "Web project focused on searching and filtering dog breeds. Displays detailed information about each breed, with a backend built in Node.js and Express.",
+      "publicationDate": "2023-09-25T16:19:50.000Z",
+      "status": "complete"
     },
     {
-        "title": "Individual Project - Henry Dogs",
-        "link": "https://github.com/JuanHernandezMorani/DogsProject",
-        "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739931461/uploads/lgbkmdjlyzrlxcbaqg5q.png",
-        "techs": [
-            "React",
-            "JavaScript",
-            "CSS",
-            "HTML",
-            "Node.js",
-            "Express"
-        ],
-        "collaborators": "Juan Braian Hernandez Morani",
-        "description": "Proyecto web centrado en la búsqueda y filtrado de razas de perros. Permite visualizar información detallada de cada raza, con un backend en Node.js y Express.",
-        "publicationDate": "2023-09-25T16:19:50.000Z",
-        "status": "complete"
-    },
-    {
-        "title": "Company skill test",
-        "link": "https://todochallenge-two.vercel.app/",
-        "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739934233/uploads/fyehmk0ajbvxzyzqbdqd.png",
-        "techs": [
-            "React",
-            "JavaScript",
-            "CSS",
-            "HTML",
-            "Node.js",
-            "Express"
-        ],
-        "collaborators": "Juan Braian Hernandez Morani",
-        "description": "Aplicación de lista de tareas desarrollada como prueba técnica para una empresa. Utiliza React en el frontend y Express con Node.js en el backend.",
-        "publicationDate": "2023-10-26T10:00:00.000Z",
-        "status": "complete"
+      "id": 7,
+      "uuid": "2c6cb3de-b2fb-4ffe-8863-356e14ad76f4",
+      "title": "Company Skill Test",
+      "link": "https://todochallenge-two.vercel.app/",
+      "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739934233/uploads/fyehmk0ajbvxzyzqbdqd.png",
+      "techs": [
+        "React",
+        "JavaScript",
+        "CSS",
+        "HTML",
+        "Node.js",
+        "Express"
+      ],
+      "collaborators": "Juan Braian Hernandez Morani",
+      "description": "To-do list application developed as a technical test for a company. Uses React for the frontend and Express with Node.js for the backend.",
+      "publicationDate": "2023-10-26T10:00:00.000Z",
+      "status": "complete"
     }
-]
+  ]

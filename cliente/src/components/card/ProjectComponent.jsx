@@ -45,7 +45,7 @@ const ProjectComponent = ({ project, isEdit, showDeleteButton }) => {
           {project.description}
         </p>
 
-        {project.description.length > 150 && (
+        {project.description.length > 160 && (
           <button 
             className="toggle-description" 
             onClick={() => setShowFullDescription(!showFullDescription)}
