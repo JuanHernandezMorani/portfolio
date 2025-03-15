@@ -9,9 +9,6 @@ import c from '../imgs/others/c.jpeg';
 import d from '../imgs/others/d.png';
 import e from '../imgs/others/e.png';
 import f from '../imgs/others/f.jpg';
-import g from '../imgs/others/g.png';
-import h from '../imgs/others/h.png';
-import i from '../imgs/others/i.png';
 
 export default function Home({ projects }) {
     const [charge, setCharge] = useState(false);
@@ -48,41 +45,23 @@ export default function Home({ projects }) {
         }
     ]
 
-    const clients = [
-        {
-            title: "Excellent work",
-            description: "Juan Braian transformed our ideas into an incredible application. Their attention to detail and professionalism were exceptional.",
-            image: g
-        },
-        {
-            title: "Great experience",
-            description: "Working with Juan was a pleasure. He perfectly understood our needs and delivered a final product that exceeded our expectations.",
-            image: h
-        },
-        {
-            title: "100% recommended",
-            description: "I recommend Juan to anyone looking for a competent and reliable web developer. Your dedication is admirable.",
-            image: i
-        }
-    ]
-
     const data = [
         {
             id: 0,
-            title: "Desarrollo de Aplicaciones Web",
-            description: "Ofrezco servicios de desarrollo de aplicaciones web personalizadas, utilizando tecnologías modernas que garantizan una experiencia de usuario excepcional y un rendimiento óptimo.",
+            title: "Web Application Development",
+            description: "I offer custom web application development services, using modern technologies that ensure an exceptional user experience and optimal performance.",
             imgLink: a
         },
         {
             id: 1,
-            title: "Diseño Responsivo",
-            description: "Mis diseños son responsivos y adaptables a cualquier dispositivo, asegurando que tu aplicación se vea y funcione de manera excelente en móviles y ordenadores.",
+            title: "Responsive Design",
+            description: "My designs are responsive and adaptable to any device, ensuring that your app looks and works great on mobile and desktop.",
             imgLink: e
         },
         {
             id: 2,
-            title: "Mantenimiento y Soporte",
-            description: "Brindo mantenimiento continuo y soporte técnico para asegurar que tu aplicación funcione sin problemas y esté siempre actualizada con las últimas tecnologías.",
+            title: "Maintenance and Support",
+            description: "I provide ongoing maintenance and technical support to ensure that your application runs smoothly and is always up to date with the latest technologies.",
             imgLink: c
         }
     ];
@@ -142,7 +121,7 @@ export default function Home({ projects }) {
                             {
                                 services.map((e) => {
                                     return (<div className="home-element" key={e.title}>
-                                        <img src={e.image} alt={e.title.split(' ').join('-') + "-image"} />
+                                        <img src={e.image} alt={e.title.split(' ').join('-') + "-image"} className='img-fluid' />
                                         <strong>{e.title}</strong>
                                         <span>{e.description}</span>
                                     </div>)
@@ -150,21 +129,6 @@ export default function Home({ projects }) {
                             }
                         </div>
 
-                    </div>
-                    <div className="home-title-element">
-                        <h2>What my clients say</h2>
-                        <span>My client's opinions are a fundamental part of my work.</span>
-                        <div className="home-grid-element">
-                            {
-                                clients.map((e) => {
-                                    return (<div className="home-element" key={e.title}>
-                                        <img src={e.image} alt={e.title.split(' ').join('-') + "-image"} />
-                                        <strong>{e.title}</strong>
-                                        <span>{e.description}</span>
-                                    </div>)
-                                })
-                            }
-                        </div>
                     </div>
                 </div>
                 : !charge ? <div className='loader-conteiner'><Loader /></div>

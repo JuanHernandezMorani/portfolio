@@ -3,19 +3,18 @@
     max-width: 90vw;
     margin: auto;
     text-align: center;
-    padding: 5vw 0;
+    padding-bottom: 5vw;
+    cursor: default;
 }
 
 .about-container h2 {
     font-size: 3vw;
     font-weight: bold;
-    color: #333;
     margin-bottom: 1vw;
 }
 
 .about-container span {
     font-size: 1.5vw;
-    color: #666;
     display: block;
     margin-bottom: 3vw;
 }
@@ -23,12 +22,26 @@
 .about-section {
     display: flex;
     flex-direction: column;
-    gap: 3vw;
+    align-items: center;
+    width: 100%;
+}
+
+.about-section strong {
+    font-size: 1.8vw;
+}
+
+.about-section p {
+    text-align: center;
+    width: 30vw;
+    font-size: 1.2vw;
+    font-weight: lighter;
+    cursor: text;
 }
 
 .about-grid-element {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     max-width: 90vw;
     margin-top: 5vh;
@@ -40,12 +53,12 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    border: 1px solid #ddd;
-    padding: 2vw;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border: 0.15vw solid #dddddd;
+    width: 50vw;
+    padding: 1vw;
+    border-radius: 2vw;
+    background-color: transparent;
+    box-shadow: 1vw 1vw 1vw rgba(0, 0, 0, 0.1);
 }
 
 .about-card:nth-child(even) {
@@ -70,12 +83,12 @@
 }
 
 .ab-img-container {
-    width: 40%;
+    width: 50%;
 }
 
 .ab-img-container img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 1vw;
     object-fit: cover;
 }

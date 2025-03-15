@@ -1,0 +1,38 @@
+ .container {
+    max-width: 50vw;
+    background: white;
+    padding: 1.26vw;
+    border-radius: 0.5vw;
+    box-shadow: 0 0 0.63vw rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .header h1 {
+    border-bottom: 0.126vw solid grey;
+    padding-bottom: 0.63vw;
+  }
+  
+  .section {
+    margin-top: 1.26vw;
+  }
+  
+  .entries {
+    text-align: left;
+  }
+  
+  .entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.63vw;
+  }
+  
+  .details {
+    text-align: right;
+  }
+  
+  .tasks {
+    text-align: left;
+    padding-left: 1.26vw;
+  }
+  

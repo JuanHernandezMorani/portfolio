@@ -86,7 +86,7 @@ app.put('/:uuid', async (req, res) => {
 app.post('/', async (req, res) => {
     const t = await conn.transaction();
     try {
-        const { title, link, thumbnail, techs, collaborators, description, status, publicationDate } = req.body;
+        const { title, link, techs, collaborators, description, status, publicationDate } = req.body;
         const collaboratorsData = Array.isArray(collaborators) ? JSON.stringify(collaborators) : collaborators;
         const techsData = Array.isArray(techs) ? JSON.stringify(techs) : techs;
         var newProject = {};
@@ -95,10 +95,10 @@ app.post('/', async (req, res) => {
             return res.status(400).json({ message: "Faltan datos obligatorios" });
         }
 
-        let thumb = thumbnail ? thumbnail : await captureThumbnail(link);
+        let thumb = await captureThumbnail(link);
 
         newProject = await Project.create(
-            { title, link, thumb, techs: techsData, collaborators: collaboratorsData, description, publicationDate, status },
+            { title, link, thumbnail: thumb, techs: techsData, collaborators: collaboratorsData, description, publicationDate, status },
             { transaction: t }
         );
 
@@ -132,7 +132,7 @@ app.post('/multi', async (req, res) => {
                     let thumb = thumbnail ? thumbnail : await captureThumbnail(link);
 
                     newProject = await Project.create(
-                        { title, link, thumb, techs: techsData, collaborators: collaboratorsData, description, publicationDate, status },
+                        { title, link, thumbnail: thumb, techs: techsData, collaborators: collaboratorsData, description, publicationDate, status },
                         { transaction: t }
                     );
                 }

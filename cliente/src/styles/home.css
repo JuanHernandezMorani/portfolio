@@ -4,7 +4,7 @@
 
 .home-header {
     text-align: center;
-    padding: 8vw 5vw;
+    padding: 16vw 5vw;
     background: url('../imgs/others/home-header-bg.png') center/cover no-repeat;
     color: white;
 }
@@ -131,6 +131,7 @@ button:hover {
     align-items: center;
     max-width: 80vw;
     height: 20.441vw;
+    overflow: hidden;
 }
 
 .home-element img {
@@ -138,7 +139,9 @@ button:hover {
     height: 10vw;
     border-radius: 1vw;
     margin-right: 2vw;
+    object-fit: fill;
 }
+
 
 .home-element strong {
     font-size: 1.8vw;

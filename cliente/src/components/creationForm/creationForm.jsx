@@ -6,44 +6,61 @@ import ProjectComponent from '../card/ProjectComponent.jsx';
 import { createProject, updateProject, getProjectDetail } from '../../actions';
 import Swal from 'sweetalert2';
 
-const dateRegex = "^{4}(0?[1-9]|1[012])(0?[1-9]|[12][0-9]|3[01])$";
-const linkRegex = "^(https?:\\/\\/)?((([-a-z0-9]{1,63}\\.)*?[a-z0-9]([-a-z0-9]{0,253}[a-z0-9])?\\.[a-z]{2,63})|((\\d{1,3}\\.){3}\\d{1,3}))(:\\d{1,5})?((\\/|\\?)((%[0-9a-f]{2})|[-\\w\\+\\.\\?\\/@~#&=])*)?$";
-
-
+const dateRegex = /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
+const linkRegex = /^(https?:\/\/)?(([-a-zA-Z0-9]{1,63}\.)*?[a-zA-Z0-9]([-a-zA-Z0-9]{0,253}[a-zA-Z0-9])?\.[a-zA-Z]{2,63})|((\d{1,3}\.){3}\d{1,3})(:\d{1,5})?((\/|\?)((%[0-9a-f]{2})|[-\w+?\\/@~#&=])*)?$/;
 function validate(project) {
-
-    
     const errors = {};
+
     if (!project.title) errors.title = 'El nombre es obligatorio.';
     if (project.title.length < 3) errors.title = 'El nombre debe tener mínimo 3 caracteres.';
-    if (!project.link) errors.link = 'El link es obligatorio';
-    if(project.link && !linkRegex.test(project.link)) errors.link = 'El link debe tener un formato url valido';
-    if (!project.publicationDate) errors.publicationDate = 'La fecha de publicacion es obligatoria';
-    if(project.publicationDate && !dateRegex.test(project.publicationDate)) errors.publicationDate = 'La fecha debe tener un formato valido';
+    if (project.link && !linkRegex.test(project.link)) errors.link = 'El link debe tener un formato URL válido';
+    if (project.publicationDate && !dateRegex.test(project.publicationDate)) errors.publicationDate = 'La fecha debe tener un formato válido (YYYY-MM-DD)';
+
     return errors;
 }
 
 export default function CreationForm({ projectUUID }) {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const [isLoading, setIsLoading] = useState(false);
     const [errors, setErrors] = useState({});
     const { uuid } = useParams();
     const projectToEdit = projectUUID || uuid;
     const [projectData, setProjectData] = useState({
-        title: 'undefined',
-        link: 'undefined',
-        techs: [],
-        collaborators: [],
-        status: 'published',
-        publicationDate: "undefined",
-        description: "unkown"
+        title: '',
+        link: '',
+        techs: '',
+        collaborators: '',
+        status: 'complete',
+        publicationDate: '',
+        description: ''
     });
 
     useEffect(() => {
-        if (projectToEdit) {
-            dispatch(getProjectDetail(projectToEdit));
+        async function fetchProject() {
+            if (projectToEdit) {
+                const project = await dispatch(getProjectDetail(projectToEdit));
+                if (project.payload) {
+                    setProjectData({
+                        ...project.payload,
+                        publicationDate: project.payload.publicationDate 
+                            ? project.payload.publicationDate.split('T')[0] 
+                            : ''
+                    });
+                }
+            }
         }
+        fetchProject();
     }, [projectToEdit, dispatch]);
+    
+
+    useEffect(() => {
+        const textareas = document.querySelectorAll("textarea");
+        textareas.forEach((textarea) => {
+            textarea.style.height = "auto";
+            textarea.style.height = textarea.scrollHeight + "px";
+        });
+    }, [projectData]);
 
     function handleChange(e) {
         setProjectData({ ...projectData, [e.target.name]: e.target.value });
@@ -56,7 +73,7 @@ export default function CreationForm({ projectUUID }) {
             techs: [...prevState.techs, ""],
         }));
     }
-    
+
     function handleRemoveTech(index) {
         setProjectData((prevState) => {
             const newTechs = [...prevState.techs];
@@ -64,7 +81,7 @@ export default function CreationForm({ projectUUID }) {
             return { ...prevState, techs: newTechs };
         });
     }
-    
+
     function handleTechChange(index, e) {
         setProjectData((prevState) => {
             const newTechs = [...prevState.techs];
@@ -72,26 +89,19 @@ export default function CreationForm({ projectUUID }) {
             return { ...prevState, techs: newTechs };
         });
     }
-    
+
     function handleTechOrderChange(index, e) {
         const techs = [...projectData.techs];
-        if (e.target.value < 0 || e.target.value > (techs.length - 1)) {
-            return e.target.value = index;
-        }
-        if (techs[e.target.value] === undefined || techs[e.target.value] === null) {
-            techs[e.target.value] = techs[index];
-            techs.splice(index, 1);
-            setProjectData({ ...projectData, techs });
-        }
-        else {
-            var aux = techs[index];
-            techs[index] = techs[e.target.value];
-            techs[e.target.value] = aux;
-            setProjectData({ ...projectData, techs });
-        }
-    
+        const newIndex = Math.min(Math.max(0, Number(e.target.value)), techs.length - 1);
+        [techs[index], techs[newIndex]] = [techs[newIndex], techs[index]];
+        setProjectData({ ...projectData, techs });
     }
-
+    function handleCollabOrderChange(index, e) {
+        const collaborators = [...projectData.collaborators];
+        const newCIndex = Math.min(Math.max(0, Number(e.target.value)), collaborators.length - 1);
+        [collaborators[index], collaborators[newCIndex]] = [collaborators[newCIndex], collaborators[index]];
+        setProjectData({ ...projectData, collaborators });
+    }
     function handleAddCollaborator() {
         setProjectData((prevState) => ({
             ...prevState,
@@ -115,60 +125,34 @@ export default function CreationForm({ projectUUID }) {
         });
     }
 
-    function handleCollabOrderChange(index, e) {
-        const collaborators = [...projectData.collaborators];
-        if (e.target.value < 0 || e.target.value > (collaborators.length - 1)) {
-            return e.target.value = index;
-        }
-        if (collaborators[e.target.value] === undefined || collaborators[e.target.value] === null) {
-            collaborators[e.target.value] = collaborators[index];
-            collaborators.splice(index, 1);
-            setProjectData({ ...projectData, collaborators });
-        }
-        else {
-            var aux = collaborators[index];
-            collaborators[index] = collaborators[e.target.value];
-            collaborators[e.target.value] = aux;
-            setProjectData({ ...projectData, collaborators });
-        }
 
-    }
-
-    document.querySelectorAll("textarea").forEach(textarea => {
-        if (textarea.id) {
-            const adjustHeight = () => {
-                textarea.style.height = "auto";
-                textarea.style.height = textarea.scrollHeight + "px";
-            };
-
-            textarea.addEventListener("input", adjustHeight);
-            adjustHeight();
-        }
-    });
 
     function handleSubmit(e) {
         e.preventDefault();
-        let errors = validate(projectData);
-        if (!errors.title && !errors.link && !errors.publicationDate) {
-            if (!!projectToEdit) {
-                dispatch(updateProject(projectToEdit, projectData));
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Proyecto actualizado con éxito',
-                    showClass: { popup: 'animate__animated animate__fadeInDown' },
-                    hideClass: { popup: 'animate__animated animate__fadeOutUp' }
-                }).then(() => navigate('/'));
-            }
-            else {
-                dispatch(createProject(projectData));
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Proyecto creado con éxito',
-                    showClass: { popup: 'animate__animated animate__fadeInDown' },
-                    hideClass: { popup: 'animate__animated animate__fadeOutUp' }
-                }).then(() => navigate('/'));
-            };
-            
+        const validationErrors = validate(projectData);
+        setErrors(validationErrors);
+        setIsLoading(true);
+
+        if (Object.keys(validationErrors).length === 0) {
+            const action = projectToEdit ? updateProject(projectToEdit, projectData) : createProject(projectData);
+            dispatch(action)
+                .then(() => {
+                    Swal.fire({
+                        icon: 'success',
+                        title: projectToEdit ? 'Proyecto actualizado con éxito' : 'Proyecto creado con éxito'
+                    });
+                    navigate('/');
+                })
+                .catch(() => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Ocurrió un error',
+                        text: 'No se pudo completar la acción'
+                    });
+                })
+                .finally(() => setIsLoading(false));
+        } else{
+            setIsLoading(false);
         }
     }
 
@@ -188,63 +172,71 @@ export default function CreationForm({ projectUUID }) {
                         {errors.link && <p className='input-errors'>{errors.link}</p>}
                     </div>
                     <div>
-                    <h3>Techs</h3>
-                    <select onChange={(e) => setProjectData({ ...projectData, collaborators: e.target.value === "single" ? "" : [] })} className='input-text'>
-                        <option value="single">One Tech</option>
-                        <option value="multiple">Multiple Techs</option>
-                    </select>
-                    {Array.isArray(projectData.techs) ? (
-                        <>
-                            <button type="button" onClick={handleAddTech}>Add Tech</button>
-                            {projectData.techs.map((tech, index) => (
-                                <div key={index}>
-                                    <input type="text" value={tech} onChange={(e) => handleTechChange(index, e)} placeholder={`Tech ${index + 1}`} className='input-text' />
-                                    <input type='number' name='tech-order' value={index} onChange={(e) => handleTechOrderChange(index, e)} min='0' className='order-input' />
-                                    <button type="button" onClick={() => handleRemoveTech(index)} className='content-button'>Delete</button>
-                                </div>
-                            ))}
-                        </>
-                    ) : (
-                        <input
-                            type="text"
-                            name="collaborators"
-                            value={projectData.collaborators}
-                            onChange={(e) => setProjectData({ ...projectData, techs: e.target.value })}
-                            placeholder="Nombre del colaborador"
-                            className='input-text-c'
-                        />
-                    )}
+                        <h3>Status</h3>
+                        <select name='status' value={projectData.status} onChange={handleChange}>
+                            <option value="complete">complete</option>
+                            <option value="incomplete">incomplete</option>
+                            <option value="abandoned">abandoned</option>
+                        </select>
                     </div>
                     <div>
-                    <h3>Collaborators</h3>
-                    <select onChange={(e) => setProjectData({ ...projectData, collaborators: e.target.value === "single" ? "" : [] })} className='input-text'>
-                        <option value="single">One collaborator</option>
-                        <option value="multiple">Multiple colaborators</option>
-                    </select>
-
-                    {Array.isArray(projectData.collaborators) ? (
-                        <>
-                            <button type="button" onClick={handleAddCollaborator}>Add collaborator</button>
-                            {projectData.collaborators.map((collab, index) => (
-                                <div key={index}>
-                                    <input type="text" value={collab} onChange={(e) => handleCollaboratorChange(index, e)} placeholder={`Colaborador ${index + 1}`} className='input-text' />
-                                    <input type='number' name='collab-order' value={index} onChange={(e) => handleCollabOrderChange(index, e)} min='0' className='order-input' />
-                                    <button type="button" onClick={() => handleRemoveCollaborator(index)} className='content-button'>Delete</button>
-                                </div>
-                            ))}
-                        </>
-                    ) : (
-                        <input
-                            type="text"
-                            name="collaborators"
-                            value={projectData.collaborators}
-                            onChange={(e) => setProjectData({ ...projectData, collaborators: e.target.value })}
-                            placeholder="Nombre del colaborador"
-                            className='input-text-c'
-                        />
-                    )}
+                        <h3>Techs</h3>
+                        <select value={Array.isArray(projectData.techs) ? "multiple" : "single"} onChange={(e) => setProjectData({ ...projectData, techs: e.target.value === "single" ? "" : [] })} className='input-text'>
+                            <option value="single">One Tech</option>
+                            <option value="multiple">Multiple Techs</option>
+                        </select>
+                        {Array.isArray(projectData.techs) ? (
+                            <>
+                                <button className="addButton" type="button" onClick={handleAddTech}>Add</button>
+                                {projectData.techs.map((tech, index) => (
+                                    <div key={index}>
+                                        <input type="text" value={tech} onChange={(e) => handleTechChange(index, e)} placeholder={`Tech ${index + 1}`} className='input-text' />
+                                        <input type='number' name='tech-order' value={index} onChange={(e) => handleTechOrderChange(index, e)} min='0' className='order-input' />
+                                        <button type="button" onClick={() => handleRemoveTech(index)} className='content-button'>Delete</button>
+                                    </div>
+                                ))}
+                            </>
+                        ) : (
+                            <input
+                                type="text"
+                                name="techs"
+                                value={projectData.techs}
+                                onChange={(e) => setProjectData({ ...projectData, techs: e.target.value })}
+                                placeholder="Tech"
+                                className='input-text-c'
+                            />
+                        )}
                     </div>
-                        <div>
+                    <div>
+                        <h3>Collaborators</h3>
+                        <select value={Array.isArray(projectData.collaborators) ? "multiple" : "single"} onChange={(e) => setProjectData({ ...projectData, collaborators: e.target.value === "single" ? "" : [] })} className='input-text'>
+                            <option value="single">One collaborator</option>
+                            <option value="multiple">Multiple colaborators</option>
+                        </select>
+
+                        {Array.isArray(projectData.collaborators) ? (
+                            <>
+                                <button className="addButton" type="button" onClick={handleAddCollaborator}>Add</button>
+                                {projectData.collaborators.map((collab, index) => (
+                                    <div key={index}>
+                                        <input type="text" value={collab} onChange={(e) => handleCollaboratorChange(index, e)} placeholder={`Colaborador ${index + 1}`} className='input-text' />
+                                        <input type='number' name='collab-order' value={index} onChange={(e) => handleCollabOrderChange(index, e)} min='0' className='order-input' />
+                                        <button type="button" onClick={() => handleRemoveCollaborator(index)} className='content-button'>Delete</button>
+                                    </div>
+                                ))}
+                            </>
+                        ) : (
+                            <input
+                                type="text"
+                                name="collaborators"
+                                value={projectData.collaborators}
+                                onChange={(e) => setProjectData({ ...projectData, collaborators: e.target.value })}
+                                placeholder="Collaborator"
+                                className='input-text-c'
+                            />
+                        )}
+                    </div>
+                    <div>
                         <h3>Publication Day</h3>
                         <input type="date" value={projectData.publicationDate} id={projectData.publicationDate} name='publicationDate' onChange={handleChange} min="2019-01-01" className='input-text-2' />
                         {errors.publicationDate && <p className='input-errors'>{errors.publicationDate}</p>}
@@ -253,10 +245,16 @@ export default function CreationForm({ projectUUID }) {
                         <h3>Description</h3>
                         <textarea value={projectData.description} id={projectData.description} name='description' placeholder='description...' onChange={handleChange} className='input-text-2' />
                     </div>
+                    {projectToEdit ? <button type='submit' className='create-button'>Save Project</button> : <button type='submit' className='create-button'>Create Project</button>}
                 </form>
+                {isLoading && (
+                <div className="creation-loader-overlay">
+                    <div className="creation-spinner"></div>
+                </div>
+            )}
             </div>
-            <div>
-                <ProjectComponent project={projectData} />
+            <div className='project-component-side'>
+                <ProjectComponent project={projectData} isEdit={true} />
             </div>
         </div>
     );

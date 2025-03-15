@@ -1,0 +1,194 @@
+.creation-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: #f4f4f4;
+    gap: 2vw;
+}
+
+.project-component-side {
+    margin-bottom: 2vw;
+}
+
+.creation-form-component {
+    width: 50vw;
+    background: #ffffff;
+    padding: 2.5vw;
+    border-radius: 1.25vw;
+    box-shadow: 0 0.625vw 1.25vw rgba(0, 0, 0, 0.1);
+    margin-top: 1vw;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25vw;
+}
+
+h3 {
+    font-size: 1.5vw;
+    color: #333;
+}
+
+textarea, input, select {
+    width: 100%;
+    padding: 0.625vw;
+    font-size: 1.008vw;
+    border: 0.063vw solid #ccc;
+    border-radius: 0.625vw;
+    resize: none;
+    margin-bottom: 0.625vw;
+}
+
+.input-text {
+    width: 100%;
+    padding: 0.625vw;
+    font-size: 1.008vw;
+    border: 0.063vw solid #ccc;
+    border-radius: 0.625vw;
+}
+
+.input-text-2 {
+    width: 100%;
+    padding: 0.625vw;
+    font-size: 1.008vw;
+    border: 0.063vw solid #aaa;
+    border-radius: 0.625vw;
+    background-color: #f9f9f9;
+}
+
+.input-errors {
+    color: red;
+    font-size: 0.945vw;
+}
+
+.create-button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.945vw 1.89vw;
+    font-size: 1.008vw;
+    border: none;
+    border-radius: 0.625vw;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 0.625vw;
+}
+
+.create-button:hover {
+    background-color: #0056b3;
+}
+
+.content-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.625vw;
+    font-size: 1.008vw;
+    border-radius: 0.625vw;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-align: center;
+    margin-left: 0.625vw;
+    height: 2vw;
+    width: 5vw;
+}
+
+.content-button:hover {
+    background-color: #a71d2a;
+}
+
+.order-input {
+    width: 3vw;
+    padding: 0.313vw;
+    font-size: 1.008vw;
+    border-radius: 0.313vw;
+    text-align: center;
+}
+
+.multi-input-container {
+    display: flex;
+    align-items: center;
+    gap: 0.625vw;
+    justify-content: center;
+}
+
+@media (max-width: 48.26vw) {
+    .creation-form-component {
+        width: 80vw;
+        padding: 5vw;
+    }
+    
+    .form-container {
+        gap: 2vw;
+    }
+
+    .create-button, .content-button {
+        font-size: 1.26vw;
+    }
+}
+
+.addButton {
+    background-color: #c2fbd7;
+    border-radius: 6.3vw;
+    box-shadow: rgba(44, 187, 99, 0.2) 0 -1.575vw 1.134vw -0.882vw inset, 
+                rgba(44, 187, 99, 0.15) 0 0.063vw 0.126vw, 
+                rgba(44, 187, 99, 0.15) 0 0.126vw 0.252vw, 
+                rgba(44, 187, 99, 0.15) 0 0.252vw 0.504vw, 
+                rgba(44, 187, 99, 0.15) 0 0.504vw 1.008vw, 
+                rgba(44, 187, 99, 0.15) 0 1.008vw 2.016vw;
+    color: green;
+    cursor: pointer;
+    display: inline-block;
+    font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+    padding: 0.441vw 1.26vw;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 0.7vw;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 6vw;
+    height: 2vw;
+    margin-bottom: 1vw;
+}
+  
+.addButton:hover {
+    box-shadow: rgba(44, 187, 99, 0.35) 0 -1.575vw 1.134vw -0.882vw inset, 
+                rgba(44, 187, 99, 0.25) 0 0.063vw 0.126vw, 
+                rgba(44, 187, 99, 0.25) 0 0.126vw 0.252vw, 
+                rgba(44, 187, 99, 0.25) 0 0.252vw 0.504vw, 
+                rgba(44, 187, 99, 0.25) 0 0.504vw 1.008vw, 
+                rgba(44, 187, 99, 0.25) 0 1.008vw 2.016vw;
+    transform: scale(1.05) rotate(-1deg);
+}
+
+.creation-loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.creation-spinner {
+    width: 4vw;
+    height: 4vw;
+    border: 0.5vw solid rgba(159, 170, 58, 0.3);
+    border-top: 0.5vw solid #474040;
+    border-radius: 50%;
+    animation: creation-spin 1s linear infinite;
+}
+
+@keyframes creation-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

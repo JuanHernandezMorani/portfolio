@@ -39,25 +39,6 @@ export function getProjectDetail(uuid){
     }
 }
 
-export function createProject(projectData){
-    return async function (dispatch) {
-        try {
-            const response = await axios.post(`${server}/projects/`, projectData);
-            return dispatch({
-                type: "CREATE_PROJECT",
-                payload: response.data
-            });
-        } catch (error) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Error 412',
-                text: error.response.data.message || 'No se pudo crear el post',
-                footer: 'Porfavor verifica que todos lo campos se hayan completado correctamente, y que el titulo no este siendo utilizado, y vuelve a internarlo.'
-            });
-        }
-    }
-}
-
 export function sendMSG(data){
     return async function (dispatch) {
         try {
@@ -78,12 +59,35 @@ export function sendMSG(data){
     }
 }
 
+export function createProject(projectData){
+    return async function (dispatch) {
+        try {
+            const response = await axios.post(`${server}/projects/`, projectData);
+            dispatch({
+                type: "CREATE_PROJECT",
+                payload: response.data
+            });
+            Swal.fire({
+                icon: 'success',
+                title: 'Done',
+                text: 'Project created successfully.',
+              });
+        } catch (error) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error 412',
+                text: error.response.data.message || 'Cant create project',
+            });
+        }
+    }
+}
+
 export function updateProject(uuid, updatedPost) {
     return async function (dispatch) {
       try {
         const response = await axios.put(`${server}/projects/${uuid}`, updatedPost);
         if (response.status >= 200 && response.status < 400) {
-            await dispatch({
+            dispatch({
                 type: 'UPDATE_PROJECT',
                 payload: response.data,
               });
@@ -97,7 +101,7 @@ export function updateProject(uuid, updatedPost) {
         Swal.fire({
           icon: 'error',
           title: 'Error',
-          text: err.response.data.message || 'Hubo un error al actualizar el proyecto.',
+          text: err.response.data.message || 'Cant update project',
         });
       }
     };
@@ -107,21 +111,26 @@ export function removeProject(uuid){
     return async function(dispatch){
         try{        
         const response = await axios.delete(`${server}/projects/${uuid}`);
-        return dispatch({
+        dispatch({
             type: "REMOVE_PROJECT",
             payload: response.data
         });
+        Swal.fire({
+            icon: 'success',
+            title: 'Done',
+            text: 'Project removed successfully.',
+          });
     }
         catch(error){
             Swal.fire({
                 icon: 'error',
                 title: 'Error 412',
                 text: error.response.data.message || 'Cant delete Project',
-                footer: 'Check if Project data is correct, and try again'
             });
         }
     }
 }
+
 
 export function clearDetail(){
     return {

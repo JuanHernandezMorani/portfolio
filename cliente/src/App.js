@@ -1,5 +1,5 @@
 import './styles/App.css';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getProjects } from './actions';
@@ -12,18 +12,28 @@ import About from './routes/about.jsx';
 import CreationForm from './components/creationForm/creationForm.jsx';
 import ProtectedRoute from './components/protectedRoute/protectedRoute.jsx';
 import ErrorPage from './routes/errorPage.jsx';
+import CurriculumVitae from './routes/curriculumVitae.jsx';
 
 function App() {
-    const [charge, setCharge] = useState(false);
     const dispatch = useDispatch();
     const projects = useSelector(state => state.OriginalProjects);
+    const needsUpdate = useSelector(state => state.needsUpdate);
 
     useEffect(() => {
-            if (!charge) {
-                dispatch(getProjects());
-                setCharge(true);
-            }
-        }, [dispatch, charge, projects]);
+      if (!sessionStorage.getItem("sessionActive")) {
+          sessionStorage.setItem("sessionActive", "true");
+      }
+
+      if (needsUpdate || projects.length === 0) {
+          dispatch(getProjects());
+      }
+
+      const interval = setInterval(() => {
+          dispatch(getProjects());
+      }, 5 * 60 * 1000);
+
+      return () => clearInterval(interval);
+  }, [dispatch, needsUpdate, projects.length]);
 
   return (
     <BrowserRouter>
@@ -36,6 +46,7 @@ function App() {
             <Route exact path="/projects" element={<Projects />} />
             <Route exact path="/contact" element={<Contacto />} />
             <Route path="*" element={<ErrorPage />} />
+            <Route path='/cv' element={<CurriculumVitae />} />
 
             <Route element={<ProtectedRoute />}>
               <Route path="/projects/:uuid" element={<CreationForm />} />

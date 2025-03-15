@@ -15,6 +15,13 @@
     white-space: nowrap;
 }
 
+.title img {
+    position: absolute;
+    width: 7vw;
+    top: -1vw;
+    height: auto;
+}
+
 .nav-container ul {
     display: flex;
     align-items: center;
