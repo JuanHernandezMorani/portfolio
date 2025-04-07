@@ -2,28 +2,67 @@ import React from 'react';
 import '../../styles/cvRoute.css';
 
 const CvRoute = () => {
-    const educationData = [
-        { title: "Egg LXP - Argentina Programa", subtitle: "FullStack Developer", location: "Buenos Aires, Argentina", date: "Dec 2022 - Nov 2023" },
-        { title: "Self-taught Study", subtitle: "Web Design", location: "Buenos Aires, Argentina", date: "Jan 2022 - Present" },
-        { title: "SoyHenry Bootcamp - Argentina", subtitle: "FullStack Web Developer", location: "Buenos Aires, Argentina", date: "Aug 2022 - Nov 2022" }
-      ];
-      
-      const experienceData = [
-        { title: "Full Stack Web Developer", company: "Boom Studios", date: "Jan 2025 - Present", tasks: ["Set up a professional page for clients.", "Applied responsive design principles.", "Design the right server for each client."] },
-        { title: "Full Stack Web Developer", company: "Own", date: "Dec 2024 - Dec 2024", tasks: ["Investigation of CSS equivalents and display sizes.", "Implementation of calculating functions.", "Used JavaScript, SQL, and HTML to develop applications."] },
-        { title: "Java Video-Game Developer", company: "Own", date: "May 2023 - Present", tasks: ["Design neat and efficient code using Java.", "Designed and implemented gameplay mechanics."] },
-        { title: "Full Stack Web Developer", company: "Henry Bootcamp and Egg XLP", date: "Sep 2022 - Nov 2023", tasks: ["Development of back models.", "Team organization.", "Testing and error resolution."] }
-      ];
+  const educationData = [
+    { title: "Self-Taught Learning in Udemy", subtitle: "Web Design and Video-Game Development", location: "Cordoba, Argentina", date: "Apr 2025 - On going" },
+    { title: "Egg LXP - Argentina Programa 4.0", subtitle: "Backend Developer", location: "Buenos Aires, Argentina", date: "Dec 2022 - May 2023" },
+    { title: "EF SET", subtitle: "C1 English Certificate", location: "Buenos Aires, Argentina", date: "Nov 2022" },
+    { title: "SoyHenry Bootcamp - Argentina", subtitle: "Full Stack Web Developer", location: "Buenos Aires, Argentina", date: "Aug 2022 - Nov 2022" },
+    { title: "Self-Taught Learning", subtitle: "Web Design and Development", location: "Buenos Aires, Argentina", date: "Jan 2022 - On going" }
+  ];
 
-    return (
+  const experienceData = [
+    {
+      title: "Full Stack Web Developer",
+      company: "Boom Studios",
+      date: "Jan 2025 - On going",
+      tasks: [
+        "Developing client websites and ensuring a fully responsive design for all devices.",
+        "Optimized backend and server configurations tailored to each client's needs.",
+        "Improved system efficiency by 15% for user bases between 100 to 1000 clients.",
+        "Data Entry Project (Feb 24 - Mar 10, 2025): Managed product data for an e-commerce on MiTiendaNube platform—reviewed duplicates, uploaded images and descriptions, and assigned categories for 4000+ products."
+      ]
+    },
+    {
+      title: "Full Stack Web Developer",
+      company: "Freelance",
+      date: "Dec 2024 - On going",
+      tasks: [
+        "Researched CSS equivalents and responsive display techniques.",
+        "Implemented calculation-based features in web applications.",
+        "Developed full-stack apps using JavaScript, SQL, and HTML."
+      ]
+    },
+    {
+      title: "Java Game Developer",
+      company: "Freelance",
+      date: "May 2023 - On going",
+      tasks: [
+        "Wrote clean and efficient code in Java for custom gameplay mechanics.",
+        "Developed interactive game elements, improving engagement and stability."
+      ]
+    },
+    {
+      title: "Full Stack Web Developer",
+      company: "Henry Bootcamp & Egg LXP",
+      date: "Sep 2022 - Nov 2023",
+      tasks: [
+        "Collaborated in team-based full-stack development projects.",
+        "Built scalable backend models using Node.js and PostgreSQL, enabling secure user authentication.",
+        "Ran tests, and resolved bugs efficiently."
+      ]
+    }
+  ];
+
+  return (
     <div className="container">
       <header className="header">
         <h1>Juan Braian Hernandez Morani</h1>
         <p>Av. Velez Sarsfield 1237 • Cordoba, X5000JJM • juan.hernandez.morani@gmail.com • +5493512513177</p>
+        <p>https://portfolio-juan-braian-hernandez-moranis-projects.vercel.app/</p>
       </header>
 
       <section className="section">
-        <h2>Education</h2>
+        <h2>Education and Certifications</h2>
         <div className="entries">
           {educationData.map((edu, index) => (
             <div key={index} className="entry">
@@ -35,7 +74,7 @@ const CvRoute = () => {
       </section>
 
       <section className="section">
-        <h2>Experience</h2>
+        <h2>Professional Experience</h2>
         <div className="entries">
           {experienceData.map((exp, index) => (
             <div key={index}>
@@ -56,7 +95,9 @@ const CvRoute = () => {
       <section className="section">
         <h2>Skills</h2>
         <p><strong>Technical:</strong> HTML, CSS, JavaScript, Java, C#, Node.js, React/Redux, Express, PostgreSQL, API Integration, Front-end Frameworks, Responsive Design, Problem-Solving</p>
-        <p><strong>Language:</strong> Spanish, English</p>
+        <p><strong>Tools:</strong> Microsoft Office (Word, Excel, PowerPoint)</p>
+        <p><strong>Soft:</strong> Communication, Teamwork, Time Management, Adaptability</p>
+        <p><strong>Languages:</strong> Spanish (Native), English (Advanced)</p>
       </section>
     </div>
   );

@@ -20,10 +20,7 @@ export default function Home({ projects }) {
             if (!projects) {
                 dispatch(getProjects());
             }
-            setTimeout(() => {
-
-                setCharge(true);
-            }, 3000);
+            setCharge(true);
         }
     }, [dispatch, charge, projects]);
 
