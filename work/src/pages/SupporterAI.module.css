@@ -1,0 +1,233 @@
+.hero {
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 75% 20%, rgba(167, 139, 250, .12), transparent 25rem),
+    radial-gradient(circle at 20% 40%, rgba(111, 183, 255, .08), transparent 28rem);
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.statusRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: 1.4rem;
+}
+
+.hero h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(3.25rem, 8vw, 7rem);
+}
+
+.lead {
+  max-width: 50rem;
+  font-size: clamp(1.05rem, 1.8vw, 1.28rem);
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  margin-top: 1.5rem;
+}
+
+.focusPanel,
+.principlesPanel {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xl);
+  background: linear-gradient(145deg, rgba(17, 31, 50, .92), rgba(8, 18, 31, .94));
+  box-shadow: var(--shadow-lg);
+}
+
+.panelLabel {
+  margin-bottom: .45rem;
+  color: var(--primary);
+  font-size: .75rem;
+  font-weight: 850;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.focusPanel p:not(.panelLabel) {
+  margin-bottom: 0;
+}
+
+.divider {
+  height: 1px;
+  margin: 1.25rem 0;
+  background: var(--border);
+}
+
+.capabilityGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .9rem;
+}
+
+.capabilityCard {
+  height: 100%;
+  min-height: 8.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,.025);
+}
+
+.capabilityCard span {
+  color: var(--text-muted);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.capabilityCard h3 {
+  margin: 1rem 0 0;
+  font-size: 1.05rem;
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, .9fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.2rem 1fr;
+  gap: .8rem;
+  padding: 0 0 1.4rem;
+}
+
+.timeline li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  left: .38rem;
+  width: 1px;
+  height: calc(100% - .1rem);
+  background: var(--border);
+}
+
+.dot {
+  position: relative;
+  z-index: 1;
+  width: .8rem;
+  height: .8rem;
+  margin-top: .25rem;
+  border: 2px solid var(--text-muted);
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+.timeline strong {
+  display: block;
+  margin-bottom: .1rem;
+}
+
+.timeline small {
+  color: var(--text-muted);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.complete .dot {
+  border-color: var(--success);
+  background: var(--success);
+}
+
+.current .dot {
+  border-color: var(--primary);
+  background: var(--primary);
+  box-shadow: 0 0 0 6px rgba(111, 183, 255, .11);
+}
+
+.next .dot {
+  border-color: var(--warning);
+}
+
+.principlesPanel {
+  position: sticky;
+  top: calc(var(--header-height) + 1.25rem);
+}
+
+.principlesPanel h2 {
+  margin-bottom: 1.2rem;
+  font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+}
+
+.disclosure {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.disclosure strong {
+  display: block;
+  margin-bottom: .45rem;
+}
+
+.disclosure p {
+  margin-bottom: 0;
+  font-size: .92rem;
+}
+
+@media (max-width: 920px) {
+  .heroGrid,
+  .detailGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .focusPanel,
+  .principlesPanel {
+    max-width: 46rem;
+  }
+
+  .principlesPanel {
+    position: static;
+  }
+
+  .capabilityGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 580px) {
+  .capabilityGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .capabilityCard {
+    min-height: auto;
+  }
+
+  .heroActions,
+  .heroActions a {
+    width: 100%;
+  }
+}

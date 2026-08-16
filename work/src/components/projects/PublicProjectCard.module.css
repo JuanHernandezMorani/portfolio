@@ -1,0 +1,110 @@
+.card {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(150deg, rgba(17, 31, 50, 0.92), rgba(8, 18, 31, 0.94));
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-lg);
+}
+
+.imageLink {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #0a1525;
+}
+
+.imageLink::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(4, 10, 18, 0.65));
+}
+
+.imageLink img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 420ms ease;
+}
+
+.card:hover .imageLink img {
+  transform: scale(1.025);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1rem, 2.3vw, 1.4rem);
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 0.65rem;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.body h3 {
+  margin-bottom: 0.7rem;
+}
+
+.description {
+  margin-bottom: 1rem;
+}
+
+.techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+  margin: auto 0 1.2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.techs li {
+  padding: 0.34rem 0.52rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-soft);
+  background: rgba(255, 255, 255, 0.025);
+  font-size: 0.77rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.featured {
+  border-color: rgba(111, 183, 255, 0.2);
+}
+
+@media (min-width: 900px) {
+  .featured {
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    grid-template-rows: none;
+  }
+
+  .featured .imageLink {
+    min-height: 100%;
+    aspect-ratio: auto;
+  }
+}

@@ -1,0 +1,31 @@
+.notice {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: clamp(1.2rem, 3vw, 1.8rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: rgba(255,255,255,.025);
+}
+
+.notice h2 {
+  margin: .9rem 0 0;
+  font-size: clamp(1.45rem, 3vw, 2.25rem);
+}
+
+.notice p {
+  margin: 0;
+}
+
+.projects {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (max-width: 720px) {
+  .notice {
+    grid-template-columns: 1fr;
+  }
+}

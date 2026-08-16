@@ -1,0 +1,15 @@
+.page {
+  min-height: 70dvh;
+  display: grid;
+  place-items: center;
+  padding-block: 4rem;
+  text-align: center;
+}
+
+.page h1 {
+  margin-bottom: 1rem;
+}
+
+.page p:not(.eyebrow) {
+  margin-bottom: 1.4rem;
+}
