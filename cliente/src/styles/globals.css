@@ -6,6 +6,8 @@
 
 html {
   color-scheme: dark;
+  max-width: 100%;
+  overflow-x: clip;
   scroll-behavior: smooth;
   background: var(--bg-deep);
 }
@@ -17,6 +19,9 @@ html {
 
 body {
   margin: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
   min-width: 280px;
   min-height: 100vh;
   color: var(--text);

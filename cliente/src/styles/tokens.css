@@ -60,7 +60,7 @@
   --radius-lg: 1.65rem;
   --radius-xl: 2.15rem;
   --header-height: 4.75rem;
-  --page-width: 1180px;
+  --page-width: clamp(1180px, 76vw, 3000px);
   --page-gutter: clamp(1rem, 3vw, 2rem);
   --section-space: clamp(4.25rem, 8vw, 7.5rem);
   --transition: 180ms ease;

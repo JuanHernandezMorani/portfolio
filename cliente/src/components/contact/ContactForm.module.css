@@ -79,6 +79,15 @@
   border: 0;
 }
 
+.honeypot input {
+  width: 1px;
+  min-width: 0;
+  height: 1px;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+}
+
 .submitRow {
   display: flex;
   align-items: center;

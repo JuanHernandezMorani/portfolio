@@ -165,8 +165,9 @@
     background: var(--header-bg-mobile);
     transform: translateX(105%);
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
-    transition: transform 260ms ease, opacity 220ms ease;
+    transition: transform 260ms ease, opacity 220ms ease, visibility 0s linear 260ms;
     overflow-y: auto;
     margin-left: 0;
   }
@@ -174,7 +175,9 @@
   .navOpen {
     transform: translateX(0);
     opacity: 1;
+    visibility: visible;
     pointer-events: auto;
+    transition-delay: 0s;
   }
 
   .nav ul {

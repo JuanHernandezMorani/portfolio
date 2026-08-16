@@ -146,6 +146,10 @@
   right: 0;
   z-index: 100;
   width: min(31rem, calc(100vw - (var(--page-gutter) * 2)));
+  max-height: min(70dvh, 32rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
   padding: 1rem;
   border: 1px solid var(--border-strong);
   border-radius: 1rem;
@@ -371,4 +375,10 @@
   background: var(--primary-soft);
   font-size: .75rem;
   line-height: 1.45;
+}
+
+@media (min-width: 2200px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
