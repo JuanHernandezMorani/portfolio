@@ -45,6 +45,7 @@ export default function Projects() {
   const normalizedQuery = normalizeText(trimmedQuery);
   const searchActive = normalizedQuery.length >= 3;
   const queryTooShort = normalizedQuery.length > 0 && normalizedQuery.length < 3;
+  const advancedFilterCount = languages.length + (visibility === 'All' ? 0 : 1);
 
   useEffect(() => {
     const onKeyDown = (event) => {
@@ -95,37 +96,22 @@ export default function Projects() {
           <SectionHeading
             eyebrow="Selected work"
             title="Projects"
-            description="Browse selected public and private software, AI, tooling, reverse-engineering and game-development work. Search by project name or narrow the results by category and language."
+            description="Browse selected public and private software, AI, tooling, reverse-engineering and game-development work. Search by project name or narrow the results by category, visibility and technology."
           />
         </Reveal>
 
         <Reveal delay={80} className={styles.toolbar}>
-          <div className={styles.filterGroups}>
-            <div className={styles.visibilityFilters} aria-label="Filter projects by visibility">
-              {['All', 'Public', 'Private'].map((item) => (
-                <button
-                  type="button"
-                  key={item}
-                  className={visibility === item ? styles.activeFilter : ''}
-                  onClick={() => setVisibility(item)}
-                >
-                  {item}
-                </button>
-              ))}
-            </div>
-
-            <div className={styles.categoryFilters} aria-label="Filter projects by category">
-              {projectCategories.map((item) => (
-                <button
-                  type="button"
-                  key={item}
-                  className={category === item ? styles.activeFilter : ''}
-                  onClick={() => setCategory(item)}
-                >
-                  {item}
-                </button>
-              ))}
-            </div>
+          <div className={styles.categoryFilters} aria-label="Filter projects by category">
+            {projectCategories.map((item) => (
+              <button
+                type="button"
+                key={item}
+                className={category === item ? styles.activeFilter : ''}
+                onClick={() => setCategory(item)}
+              >
+                {item}
+              </button>
+            ))}
           </div>
 
           <div className={styles.searchAndFilter} ref={filterRef}>
@@ -145,28 +131,64 @@ export default function Projects() {
               className={styles.filterButton}
               onClick={() => setFilterOpen((current) => !current)}
               aria-expanded={filterOpen}
-              aria-controls="project-language-filter"
+              aria-controls="project-filters"
             >
               <FilterIcon />
               <span>Filter</span>
-              {languages.length > 0 && <strong>{languages.length}</strong>}
+              {advancedFilterCount > 0 && <strong>{advancedFilterCount}</strong>}
             </button>
 
             {filterOpen && (
-              <div id="project-language-filter" className={styles.filterPanel}>
+              <div id="project-filters" className={styles.filterPanel}>
                 <div className={styles.filterPanelHeader}>
                   <div>
-                    <strong>Filter by language</strong>
-                    <span>Select compatible languages to narrow the project list. Alternative technologies replace each other automatically.</span>
+                    <strong>Filters</strong>
+                    <span>Refine projects by visibility and compatible technologies.</span>
                   </div>
-                  {languages.length > 0 && (
-                    <button type="button" className={styles.clearButton} onClick={() => { setLanguages([]); setFilterNotice(''); }}>
-                      Clear
+                  {advancedFilterCount > 0 && (
+                    <button
+                      type="button"
+                      className={styles.clearButton}
+                      onClick={() => {
+                        setVisibility('All');
+                        setLanguages([]);
+                        setFilterNotice('');
+                      }}
+                    >
+                      Clear all
                     </button>
                   )}
                 </div>
 
-                <div className={styles.languageOptions}>
+                <div className={styles.filterSection}>
+                  <div className={styles.filterSectionHeading}>
+                    <strong>Visibility</strong>
+                    <span>Choose whether to show public projects, private projects, or both.</span>
+                  </div>
+                  <div className={styles.visibilityOptions} role="group" aria-label="Filter projects by visibility">
+                    {['All', 'Public', 'Private'].map((item) => (
+                      <button
+                        type="button"
+                        key={item}
+                        className={visibility === item ? styles.visibilitySelected : ''}
+                        onClick={() => setVisibility(item)}
+                        aria-pressed={visibility === item}
+                      >
+                        {item}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div className={styles.filterDivider} />
+
+                <div className={styles.filterSection}>
+                  <div className={styles.filterSectionHeading}>
+                    <strong>Languages & technologies</strong>
+                    <span>Select compatible technologies. Alternatives in the same family replace one another automatically.</span>
+                  </div>
+
+                  <div className={styles.languageOptions}>
                   {projectLanguages.map((language) => {
                     const selected = languages.includes(language);
                     return (
@@ -181,6 +203,7 @@ export default function Projects() {
                       </button>
                     );
                   })}
+                  </div>
                 </div>
 
                 {filterNotice && (
@@ -213,7 +236,7 @@ export default function Projects() {
         ) : (
           <Reveal className={styles.empty}>
             <h2>No projects match the current filters.</h2>
-            <p>Try a different category, clear the language filter, or search with another name.</p>
+            <p>Try a different category, clear the advanced filters, or search with another name.</p>
           </Reveal>
         )}
       </div>
