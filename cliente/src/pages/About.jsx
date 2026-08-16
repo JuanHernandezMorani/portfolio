@@ -3,6 +3,7 @@ import Reveal from '../components/ui/Reveal.jsx';
 import SectionHeading from '../components/ui/SectionHeading.jsx';
 import { resume } from '../data/resume.js';
 import { usePageMeta } from '../hooks/usePageMeta.js';
+import portrait from '../assets/images/yo.png';
 import ab1 from '../assets/images/ab1.png';
 import ab2 from '../assets/images/ab2.png';
 import ab3 from '../assets/images/ab3.png';
@@ -24,7 +25,7 @@ const strengths = [
   },
   {
     title: 'Engineering by iteration',
-    description: 'I prefer staged migrations, measurable validation and clear technical documentation for work that needs to evolve without losing reliability.',
+    description: 'I prefer staged delivery, measurable validation and clear technical documentation for work that needs to evolve without losing reliability.',
     image: ab3
   },
   {
@@ -51,16 +52,29 @@ export default function About() {
     <>
       <section className={`page-section ${styles.intro}`}>
         <div className={`page-width ${styles.introGrid}`}>
-          <Reveal>
+          <Reveal className={styles.introHeading}>
             <p className="eyebrow">About</p>
             <h1>Software engineering with an AI and data focus.</h1>
           </Reveal>
-          <Reveal delay={90} className={styles.introCopy}>
-            <p>{resume.summary}</p>
-            <p>
-              I&apos;m especially interested in projects where product development, systems thinking, data and AI overlap. My current work includes private R&amp;D as well as public web and software projects.
-            </p>
-          </Reveal>
+
+          <div className={styles.introSide}>
+            <Reveal delay={55} className={styles.portraitCard}>
+              <img
+                src={portrait}
+                alt="Portrait of Juan Braian Hernández Morani"
+                className={styles.portrait}
+                loading="eager"
+                decoding="async"
+              />
+            </Reveal>
+
+            <Reveal delay={110} className={styles.introCopy}>
+              <p>{resume.summary}</p>
+              <p>
+                I&apos;m especially interested in projects where product development, systems thinking, data and AI overlap. My current work includes private R&amp;D as well as public web and software projects.
+              </p>
+            </Reveal>
+          </div>
         </div>
       </section>
 
@@ -96,7 +110,7 @@ export default function About() {
             <SectionHeading
               eyebrow="Skills"
               title="Current technical toolbox"
-              description="Grouped by practical use rather than displayed as an undifferentiated logo wall."
+              description="Current languages, frameworks, platforms and tools used across AI, data and software engineering work."
             />
           </Reveal>
           <div className={styles.skillGrid}>

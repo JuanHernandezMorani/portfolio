@@ -20,7 +20,7 @@
     "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1742068057/uploads/lbhbjrkd2avsqxrflmww.png",
     "techs": ["React", "JavaScript", "CSS", "HTML"],
     "collaborators": ["Juan Braian Hernández Morani"],
-    "description": "A custom utility for calculations and CSS design experiments, created with a simple React interface for testing and generating visual configurations.",
+    "description": "A custom utility for calculations and CSS design helpers, created with a simple React interface for testing and generating visual configurations.",
     "publicationDate": "2025-01-28T00:00:00.000Z",
     "status": "complete",
     "category": "Tools",

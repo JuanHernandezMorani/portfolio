@@ -32,7 +32,7 @@
   border-radius: .85rem;
   color: inherit;
   text-decoration: none;
-  background: rgba(255,255,255,.025);
+  background: var(--surface-soft);
 }
 
 .contactList > a {
@@ -42,7 +42,7 @@
 .contactList > a:hover {
   border-color: var(--border-strong);
   transform: translateX(3px);
-  background: rgba(111, 183, 255, .05);
+  background: color-mix(in srgb, var(--primary-soft) 55%, transparent);
 }
 
 .contactList img,
@@ -88,7 +88,7 @@
   padding: clamp(1.2rem, 3vw, 2rem);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-xl);
-  background: linear-gradient(145deg, rgba(17,31,50,.9), rgba(8,18,31,.93));
+  background: linear-gradient(145deg, var(--surface-gradient-start), var(--surface-gradient-end));
   box-shadow: var(--shadow-lg);
 }
 

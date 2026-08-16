@@ -22,7 +22,7 @@ export default function Reveal({ children, className = '', delay = 0, as: Tag = 
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.12, rootMargin: '0px 0px -6% 0px' }
+      { threshold: 0.01, rootMargin: '18% 0px 18% 0px' }
     );
 
     observer.observe(node);
@@ -33,7 +33,7 @@ export default function Reveal({ children, className = '', delay = 0, as: Tag = 
     <Tag
       ref={ref}
       className={`reveal ${visible ? 'reveal-visible' : ''} ${className}`.trim()}
-      style={{ '--reveal-delay': `${delay}ms` }}
+      style={{ '--reveal-delay': `${Math.min(delay, 90)}ms` }}
     >
       {children}
     </Tag>

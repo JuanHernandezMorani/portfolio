@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#08111f" />
-    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#07101d" />
+    <meta name="color-scheme" content="dark light" />
     <meta name="description" content="Portfolio of Juan Braian Hernández Morani, Full-Stack Developer focused on Artificial Intelligence, Big Data and software engineering." />
     <meta name="robots" content="index,follow" />
 
@@ -21,6 +21,16 @@
     <link rel="apple-touch-icon" href="/192logo.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
+    <script>
+      (() => {
+        try {
+          document.documentElement.dataset.theme = localStorage.getItem('portfolio-theme') === 'light' ? 'light' : 'dark';
+        } catch {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      })();
+    </script>
+
     <title>Juan Braian Hernández Morani | AI & Full-Stack Developer</title>
 
     <script type="application/ld+json">
@@ -33,7 +43,9 @@
         "url": "https://portfolio-juan-braian-hernandez-moranis-projects.vercel.app/",
         "sameAs": [
           "https://github.com/JuanHernandezMorani",
-          "https://www.linkedin.com/in/juan-hern%C3%A1ndez-morani/"
+          "https://www.linkedin.com/in/juan-hern%C3%A1ndez-morani/",
+          "https://www.facebook.com/Juan.hernandez.morani.97/",
+          "https://www.instagram.com/elchetomdq97/"
         ]
       }
     </script>

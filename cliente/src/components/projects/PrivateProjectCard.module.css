@@ -4,12 +4,12 @@
   gap: 1.1rem;
   overflow: hidden;
   padding: clamp(1.25rem, 3vw, 2rem);
-  border: 1px solid rgba(167, 139, 250, 0.24);
+  border: 1px solid color-mix(in srgb, var(--violet) 32%, var(--border));
   border-radius: var(--radius-xl);
   background:
-    radial-gradient(circle at 100% 0%, rgba(167, 139, 250, 0.16), transparent 22rem),
-    radial-gradient(circle at 0% 100%, rgba(103, 232, 249, 0.09), transparent 25rem),
-    linear-gradient(145deg, rgba(18, 29, 49, 0.98), rgba(7, 16, 29, 0.98));
+    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--violet) 18%, transparent), transparent 22rem),
+    radial-gradient(circle at 0% 100%, color-mix(in srgb, var(--cyan) 12%, transparent), transparent 25rem),
+    linear-gradient(145deg, var(--elevated-gradient-start), var(--elevated-gradient-end));
   box-shadow: var(--shadow-lg);
 }
 
@@ -20,7 +20,7 @@
   height: 14rem;
   right: -6rem;
   top: -7rem;
-  border: 1px solid rgba(111, 183, 255, 0.2);
+  border: 1px solid color-mix(in srgb, var(--primary) 28%, transparent);
   border-radius: 50%;
   animation: pulse-ring 6s ease-in-out infinite;
   pointer-events: none;
@@ -43,12 +43,14 @@
 
 .card h3 {
   margin-bottom: 0.7rem;
+  color: var(--text);
   font-size: clamp(1.9rem, 4vw, 3rem);
 }
 
 .summary {
   max-width: 54rem;
   margin-bottom: 0;
+  color: var(--text-soft);
   font-size: clamp(1rem, 1.6vw, 1.12rem);
 }
 
@@ -56,7 +58,7 @@
   padding: 1rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.025);
+  background: var(--surface-soft);
 }
 
 .focus span {
@@ -71,6 +73,7 @@
 
 .focus p {
   margin: 0;
+  color: var(--text-soft);
 }
 
 .actions {

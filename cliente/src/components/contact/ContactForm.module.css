@@ -30,13 +30,18 @@
   border: 1px solid var(--border);
   border-radius: 0.85rem;
   color: var(--text);
-  background: rgba(4, 11, 20, 0.65);
+  background: var(--input-bg);
   transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
 }
 
 .field input {
   min-height: 3.05rem;
   padding: 0.7rem 0.85rem;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--text-muted);
 }
 
 .field textarea {
@@ -47,7 +52,7 @@
 
 .field input:hover,
 .field textarea:hover {
-  border-color: rgba(255, 255, 255, 0.18);
+  border-color: var(--input-hover-border);
 }
 
 .field input:focus,
@@ -58,7 +63,7 @@
 }
 
 .error {
-  color: #ff9bac;
+  color: var(--danger);
   font-size: 0.78rem;
 }
 
@@ -87,7 +92,7 @@
 }
 
 .statusError {
-  color: #ff9bac;
+  color: var(--danger);
 }
 
 @media (max-width: 680px) {

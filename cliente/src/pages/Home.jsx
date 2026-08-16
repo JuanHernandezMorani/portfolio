@@ -169,7 +169,7 @@ export default function Home() {
             <SectionHeading
               eyebrow="Working method"
               title="Structured for long-term iteration"
-              description="The visual system and project architecture are deliberately modular so content, projects and future sections can evolve without rebuilding the entire site."
+              description="I favor modular boundaries, explicit validation and maintainable systems so complex work can evolve without turning each new requirement into a rewrite."
             />
           </Reveal>
           <div className={styles.approachGrid}>

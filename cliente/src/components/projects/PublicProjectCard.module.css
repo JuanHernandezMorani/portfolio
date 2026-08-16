@@ -5,7 +5,7 @@
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  background: linear-gradient(150deg, rgba(17, 31, 50, 0.92), rgba(8, 18, 31, 0.94));
+  background: linear-gradient(150deg, var(--surface-gradient-start), var(--surface-gradient-end));
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
@@ -21,7 +21,7 @@
   display: block;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: #0a1525;
+  background: var(--surface-strong);
 }
 
 .imageLink::after {
@@ -82,7 +82,7 @@
   border: 1px solid var(--border);
   border-radius: 999px;
   color: var(--text-soft);
-  background: rgba(255, 255, 255, 0.025);
+  background: var(--surface-soft);
   font-size: 0.77rem;
 }
 
@@ -107,4 +107,14 @@
     min-height: 100%;
     aspect-ratio: auto;
   }
+}
+
+.privateMeta {
+  color: var(--status-private-text);
+}
+
+.privateSource {
+  color: var(--text-muted);
+  font-size: .82rem;
+  font-weight: 700;
 }

@@ -7,6 +7,8 @@ export const site = {
   phone: '+549 351 251-3177',
   github: 'https://github.com/JuanHernandezMorani',
   linkedin: 'https://www.linkedin.com/in/juan-hern%C3%A1ndez-morani/',
+  facebook: 'https://www.facebook.com/Juan.hernandez.morani.97/',
+  instagram: 'https://www.instagram.com/elchetomdq97/',
   portfolioUrl: 'https://portfolio-juan-braian-hernandez-moranis-projects.vercel.app/',
   cvPath: '/Juan_Braian_Hernandez_Morani_CV.pdf'
 };

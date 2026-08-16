@@ -1,92 +1,111 @@
-# Juan Braian Hernández Morani — Portfolio v2
+# Juan Hernández — Portfolio
 
-Professional static portfolio rebuilt from the previous React + Express + PostgreSQL application.
+Professional portfolio for Juan Braian Hernández Morani, focused on AI, data, software engineering, public projects and active private R&D.
 
-## Architecture
-
-The production portfolio is now frontend-only:
+## Stack
 
 - React 19
 - Vite
 - React Router
-- CSS Modules + global design tokens
-- Static public-project data
-- Optional build-time GitHub enrichment for public repositories
-- Static private-R&D descriptions
-- FormSubmit AJAX endpoint for contact messages
-- No Redux
-- No Axios
-- No Express server
-- No PostgreSQL
-- No Sequelize
-- No administrative login / CRUD surface
-- No Puppeteer screenshot worker
-- No runtime Cloudinary upload dependency
+- CSS Modules
+- Curated project data with optional GitHub metadata enrichment at build time
+- Static-friendly contact form integration
 
-The existing project images and thumbnails were intentionally preserved for this migration. They can be replaced one-by-one later without changing the layout or project model.
-
-## Run locally
+## Development
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Validate portfolio data
+## Validation
 
 ```bash
 npm run check
+npm run build
 ```
 
-## Sync public GitHub metadata
+## Project metadata sync
+
+`src/data/publicProjects.source.json` remains the curated source of truth. `npm run sync:projects` only processes projects explicitly declared in that JSON; it does **not** crawl the GitHub account or automatically publish every repository.
 
 ```bash
 npm run sync:projects
 ```
 
-The sync script only accesses public repositories and does not require credentials. It reads `src/data/publicProjects.source.json` and writes `src/data/publicProjects.generated.json`.
+Public repositories work as before: add `githubRepo` and the sync can enrich languages and public repository metadata. If GitHub is unavailable, the manually declared metadata remains the fallback.
 
-An optional `GITHUB_TOKEN` environment variable is supported if you ever want a higher GitHub API rate limit, but the portfolio does not require one.
+### Private repositories
 
-`npm run build` runs the sync script in best-effort mode. If GitHub is unavailable or rate-limited, the local project metadata remains sufficient for a successful static build.
+Private repositories are also supported when they are explicitly declared. They require a build-time `GITHUB_TOKEN` with read access to the selected repository. The token is used only by `scripts/sync-projects.mjs` and must never use a `VITE_` prefix.
+
+A private entry can use a direct repository reference:
+
+```json
+{
+  "id": "private-project",
+  "title": "Private Project",
+  "visibility": "private",
+  "githubRepo": "OWNER/PRIVATE_REPOSITORY",
+  "thumbnail": "https://example.com/project.webp",
+  "techs": ["C++", "C#", "SQL"],
+  "description": "Public-safe project description.",
+  "publicationDate": "2026-08-16T00:00:00.000Z",
+  "status": "active",
+  "category": "Software",
+  "featured": false
+}
+```
+
+If the portfolio source repository is public, prefer keeping even the private repository name out of source control:
+
+```json
+{
+  "id": "mu-online",
+  "title": "MU Online Engineering Project",
+  "visibility": "private",
+  "githubRepoEnv": "GITHUB_REPO_MU_ONLINE",
+  "thumbnail": "https://example.com/mu-online.webp",
+  "techs": ["C++", "C#", "SQL"],
+  "description": "Public-safe description of the project.",
+  "status": "active",
+  "category": "Software",
+  "featured": false
+}
+```
+
+Then place the private values in `.env.local` or in the deployment environment:
+
+```env
+GITHUB_TOKEN=your_read_only_token
+GITHUB_REPO_MU_ONLINE=OWNER/PRIVATE_REPOSITORY
+```
+
+For private projects, generated browser data is sanitized automatically:
+
+- `githubRepo` is removed;
+- `githubRepoEnv` is removed;
+- `githubUrl` is removed;
+- GitHub repository links are never published;
+- private repository topics/stars/forks/description are not copied automatically;
+- detected languages and `lastUpdated` may be used;
+- `sourceAvailable` is forced to `false`;
+- a manually declared non-GitHub `link` or `publicLink` may still be shown as a public overview/demo.
+
+`npm run check` also fails if private generated data exposes a GitHub repository link or repository identifier.
 
 ## Contact form
 
-By default the contact form posts through FormSubmit's AJAX endpoint to:
+The default contact endpoint can be overridden without changing source code:
 
-`juanbhm.dev@gmail.com`
-
-No SMTP password or backend secret is included in the frontend.
-
-On the first real submission FormSubmit may require the recipient email to confirm/activate the form. After activation, submissions are delivered to the configured inbox.
-
-If you later use FormSubmit's invisible-email identifier or another static-form provider, set:
-
-```bash
+```env
 VITE_CONTACT_FORM_ENDPOINT=https://formsubmit.co/ajax/your-endpoint
 ```
 
-## Deploy on Vercel
+## Private R&D
 
-```bash
-npm run build
-```
+The detailed SupporterAI presentation remains in `src/data/privateProjects.js`. Other private engineering projects can be represented through the curated project source with public-safe descriptions while keeping their source unavailable.
 
-Deploy the `dist` directory. `vercel.json` includes an SPA rewrite so routes such as `/research` and `/projects/supporter-ai` work on direct navigation.
+## Deployment
 
-## Content locations
-
-- Public projects: `src/data/publicProjects.source.json`
-- Generated public metadata: `src/data/publicProjects.generated.json`
-- Private R&D: `src/data/privateProjects.js`
-- Resume: `src/data/resume.js`
-- Contact/profile data: `src/data/site.js`
-- Existing images: `src/assets/images/`
-- Existing icons: `src/assets/icons/`
-- Updated CV PDF: `public/Juan_Braian_Hernandez_Morani_CV.pdf`
-
-## Responsive behavior
-
-The layout is mobile-first and does not use viewport-width units for basic readability. Typography uses `clamp()`, content uses bounded containers, and cards use adaptive CSS Grid layouts. At tablet/mobile widths the navigation becomes a large full-height menu with touch-friendly targets.
-
-Animations automatically respect `prefers-reduced-motion`.
+The included `vercel.json` supports SPA routing on Vercel. The Vite production output is generated in `dist/`.
