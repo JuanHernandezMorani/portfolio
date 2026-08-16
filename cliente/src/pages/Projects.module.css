@@ -19,12 +19,19 @@
   box-shadow: var(--shadow-sm);
 }
 
+.filterGroups {
+  display: grid;
+  gap: .55rem;
+}
+
+.visibilityFilters,
 .categoryFilters {
   display: flex;
   flex-wrap: wrap;
   gap: .45rem;
 }
 
+.visibilityFilters button,
 .categoryFilters button {
   min-height: 3rem;
   padding: .6rem .92rem;
@@ -36,6 +43,7 @@
   font-weight: 750;
 }
 
+.visibilityFilters button:hover,
 .categoryFilters button:hover,
 .activeFilter {
   color: var(--text);
@@ -297,12 +305,14 @@
     grid-template-columns: 1fr;
   }
 
+  .visibilityFilters,
   .categoryFilters {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .categoryFilters button {
+  .visibilityFilters button,
+.categoryFilters button {
     width: 100%;
     min-height: 3rem;
   }
@@ -341,6 +351,7 @@
 }
 
 @media (max-width: 380px) {
+  .visibilityFilters,
   .categoryFilters,
   .languageOptions {
     grid-template-columns: 1fr;

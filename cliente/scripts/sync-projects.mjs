@@ -54,6 +54,22 @@ function unique(values) {
   return [...new Set(values.filter(Boolean))];
 }
 
+function resolveTechs(project, detectedLanguages = []) {
+  const declared = project.techs || [];
+  const merged = project.techsMode === 'declared'
+    ? declared
+    : unique([...declared, ...detectedLanguages]);
+  const excluded = new Set(project.excludeTechs || []);
+  return unique(merged).filter((tech) => !excluded.has(tech));
+}
+
+function stripAuthoringFields(project) {
+  const clean = { ...project };
+  delete clean.techsMode;
+  delete clean.excludeTechs;
+  return clean;
+}
+
 function requestedVisibility(project) {
   return project.visibility === 'private' ? 'private' : 'public';
 }
@@ -78,7 +94,7 @@ function isGithubUrl(value) {
 function sanitizePrivateProject(project, extra = {}) {
   const safeLink = project.publicLink || (project.link && !isGithubUrl(project.link) ? project.link : null);
   const sanitized = {
-    ...project,
+    ...stripAuthoringFields(project),
     ...extra,
     visibility: 'private',
     repositoryVisibility: 'private',
@@ -109,7 +125,7 @@ async function enrichProject(project) {
   if (!repoRef) {
     const sanitized = visibility === 'private'
       ? sanitizePrivateProject(project)
-      : { ...project, visibility: 'public' };
+      : { ...stripAuthoringFields(project), visibility: 'public', techs: resolveTechs(project) };
 
     if (project.githubRepoEnv && visibility === 'private') {
       return {
@@ -151,7 +167,7 @@ async function enrichProject(project) {
         failed: false,
         privateProject: true,
         project: sanitizePrivateProject(project, {
-          techs: unique([...(project.techs || []), ...detectedLanguages]),
+          techs: resolveTechs(project, detectedLanguages),
           lastUpdated: repo.pushed_at || repo.updated_at || project.publicationDate
         })
       };
@@ -162,11 +178,11 @@ async function enrichProject(project) {
       failed: false,
       privateProject: false,
       project: {
-        ...project,
+        ...stripAuthoringFields(project),
         visibility: 'public',
         link: project.link || repo.homepage || repo.html_url,
         description: project.description || repo.description || 'Public project.',
-        techs: unique([...(project.techs || []), ...detectedLanguages]),
+        techs: resolveTechs(project, detectedLanguages),
         githubUrl: repo.html_url,
         githubDescription: repo.description || null,
         topics: repo.topics || [],
@@ -180,7 +196,7 @@ async function enrichProject(project) {
     return {
       project: visibility === 'private'
         ? sanitizePrivateProject(project)
-        : { ...project, visibility: 'public' },
+        : { ...stripAuthoringFields(project), visibility: 'public', techs: resolveTechs(project) },
       enriched: false,
       failed: true,
       privateProject: visibility === 'private',

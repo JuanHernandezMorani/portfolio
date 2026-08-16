@@ -3,7 +3,7 @@ import projects from './publicProjects.generated.json';
 const languagePriority = [
   'JavaScript', 'TypeScript', 'Java', 'Python', 'C', 'C++', 'C#', 'Go', 'Rust',
   'Ruby', 'PHP', 'Kotlin', 'Swift', 'Dart', 'Shell', 'Bash', 'PowerShell', 'SQL',
-  'HTML', 'CSS', 'SCSS', 'Sass', 'Less', 'Lua', 'Pawn'
+  'HTML', 'CSS', 'SCSS', 'Sass', 'Less', 'Lua', 'Pawn', 'Pascal', 'HLSL'
 ];
 
 const categoryMap = {
@@ -22,7 +22,7 @@ const availableTechs = new Set(normalizedProjects.flatMap((project) => project.t
 
 export const publicProjects = normalizedProjects;
 export const featuredProjects = normalizedProjects.filter((project) => project.featured);
-const categoryPriority = ['Frontend', 'Software', 'Tools', 'Game Dev'];
+const categoryPriority = ['AI & Data', 'Software', 'Reverse Engineering', 'Tools', 'Game Dev', 'Frontend'];
 const availableCategories = new Set(normalizedProjects.map((project) => project.category));
 
 export const projectCategories = ['All', ...categoryPriority.filter((category) => availableCategories.has(category)), ...[...availableCategories].filter((category) => !categoryPriority.includes(category))];

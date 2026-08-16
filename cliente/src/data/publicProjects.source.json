@@ -4,97 +4,576 @@
     "title": "Alma Landing Page",
     "link": "https://alma-landing-page.vercel.app/",
     "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1742077312/uploads/ssjwu819uacymgms11iq.png",
-    "techs": ["React", "JavaScript", "CSS", "HTML", "Node.js"],
-    "collaborators": ["Juan Braian Hernández Morani"],
+    "techs": [
+      "React",
+      "JavaScript",
+      "CSS",
+      "HTML",
+      "Node.js"
+    ],
+    "collaborators": [
+      "Juan Braian Hernández Morani"
+    ],
     "description": "Modern and responsive landing page built with React and Node.js, focused on presenting a product or service through a clear, polished interface.",
     "publicationDate": "2025-01-14T00:00:00.000Z",
     "status": "complete",
-    "category": "Web",
+    "category": "Frontend",
     "featured": true,
-    "githubRepo": null
+    "githubRepo": null,
+    "visibility": "public",
+    "isDeployed": true
   },
   {
     "id": "personal-css-utility",
     "title": "Personal CSS Utility",
     "link": "https://calculator-zeta-two-12.vercel.app/",
     "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1742068057/uploads/lbhbjrkd2avsqxrflmww.png",
-    "techs": ["React", "JavaScript", "CSS", "HTML"],
-    "collaborators": ["Juan Braian Hernández Morani"],
+    "techs": [
+      "React",
+      "JavaScript",
+      "CSS",
+      "HTML"
+    ],
+    "collaborators": [
+      "Juan Braian Hernández Morani"
+    ],
     "description": "A custom utility for calculations and CSS design helpers, created with a simple React interface for testing and generating visual configurations.",
     "publicationDate": "2025-01-28T00:00:00.000Z",
     "status": "complete",
     "category": "Tools",
     "featured": true,
-    "githubRepo": null
+    "githubRepo": null,
+    "visibility": "public",
+    "isDeployed": true
   },
   {
     "id": "epic-adventures-mod",
     "title": "[RPG] Epic Adventures Mod",
     "link": "https://github.com/JuanHernandezMorani/Perfect-Minecraft-rpg-1.19.2",
     "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739931367/uploads/daa41zganitwbq4xsdng.png",
-    "techs": ["Java", "Shell", "Blockbench", "JavaScript", "Blender"],
-    "collaborators": ["Juan Braian Hernández Morani"],
+    "techs": [
+      "Java",
+      "Shell",
+      "Blockbench",
+      "JavaScript",
+      "Blender"
+    ],
+    "collaborators": [
+      "Juan Braian Hernández Morani"
+    ],
     "description": "Minecraft RPG-themed project that adds custom mechanics, structures and enemies, developed around the 1.19.2 ecosystem.",
     "publicationDate": "2023-05-28T23:34:40.000Z",
     "status": "complete",
     "category": "Game Dev",
     "featured": true,
-    "githubRepo": "JuanHernandezMorani/Perfect-Minecraft-rpg-1.19.2"
+    "githubRepo": "JuanHernandezMorani/Perfect-Minecraft-rpg-1.19.2",
+    "visibility": "public",
+    "isDeployed": false
   },
   {
     "id": "henry-real-estate",
     "title": "Henry Real Estate — Team Project",
     "link": "https://henrybienesraices.vercel.app/",
     "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739931974/uploads/vzqooopr2ol9nwc1tztd.png",
-    "techs": ["VueJS", "JavaScript", "SCSS", "HTML", "Node.js", "Express", "Figma", "Trello", "Git"],
-    "collaborators": ["Mariano Solis", "Tomas Clementin", "Juan Ferrari", "Franco Camus", "Enzo Ulloa", "Bautista Moreiro", "Agustin Benitez", "Juan Braian Hernández Morani"],
+    "techs": [
+      "VueJS",
+      "JavaScript",
+      "SCSS",
+      "HTML",
+      "Node.js",
+      "Express",
+      "Figma",
+      "Trello",
+      "Git"
+    ],
+    "collaborators": [
+      "Mariano Solis",
+      "Tomas Clementin",
+      "Juan Ferrari",
+      "Franco Camus",
+      "Enzo Ulloa",
+      "Bautista Moreiro",
+      "Agustin Benitez",
+      "Juan Braian Hernández Morani"
+    ],
     "description": "Team-built real-estate web platform with property management, advanced searches and user administration, developed with VueJS and Node.js.",
     "publicationDate": "2023-04-28T19:04:23.000Z",
     "status": "complete",
-    "category": "Full Stack",
+    "category": "Software",
     "featured": false,
-    "githubRepo": null
+    "githubRepo": null,
+    "visibility": "public",
+    "isDeployed": true
   },
   {
     "id": "henry-pokemon",
     "title": "Henry Pokémon — Individual Project",
     "link": "https://github.com/JuanHernandezMorani/PokemonPageProject",
     "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739931428/uploads/mdexqxhxktmby9qnuukl.png",
-    "techs": ["React", "JavaScript", "CSS", "HTML", "Node.js", "Express"],
-    "collaborators": ["Juan Braian Hernández Morani"],
+    "techs": [
+      "React",
+      "Redux",
+      "JavaScript",
+      "CSS",
+      "HTML",
+      "Node.js",
+      "Express",
+      "Sequelize",
+      "PostgreSQL"
+    ],
+    "collaborators": [
+      "Juan Braian Hernández Morani"
+    ],
     "description": "Pokémon web application with search, filtering and detailed species views, using React on the frontend and Express on the backend.",
     "publicationDate": "2023-09-25T16:11:42.000Z",
     "status": "complete",
-    "category": "Full Stack",
+    "category": "Software",
     "featured": false,
-    "githubRepo": "JuanHernandezMorani/PokemonPageProject"
+    "githubRepo": "JuanHernandezMorani/PokemonPageProject",
+    "visibility": "public",
+    "isDeployed": false
   },
   {
     "id": "henry-dogs",
     "title": "Henry Dogs — Individual Project",
     "link": "https://github.com/JuanHernandezMorani/DogsProject",
     "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739931461/uploads/lgbkmdjlyzrlxcbaqg5q.png",
-    "techs": ["React", "JavaScript", "CSS", "HTML", "Node.js", "Express"],
-    "collaborators": ["Juan Braian Hernández Morani"],
+    "techs": [
+      "React",
+      "Redux",
+      "JavaScript",
+      "CSS",
+      "HTML",
+      "Node.js",
+      "Express",
+      "Sequelize",
+      "PostgreSQL"
+    ],
+    "collaborators": [
+      "Juan Braian Hernández Morani"
+    ],
     "description": "Web project for searching and filtering dog breeds, with detailed breed information and a Node.js / Express backend.",
     "publicationDate": "2023-09-25T16:19:50.000Z",
     "status": "complete",
-    "category": "Full Stack",
+    "category": "Software",
     "featured": false,
-    "githubRepo": "JuanHernandezMorani/DogsProject"
+    "githubRepo": "JuanHernandezMorani/DogsProject",
+    "visibility": "public",
+    "isDeployed": false
   },
   {
     "id": "company-skill-test",
     "title": "Company Skill Test",
     "link": "https://todochallenge-two.vercel.app/",
     "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739934233/uploads/fyehmk0ajbvxzyzqbdqd.png",
-    "techs": ["React", "JavaScript", "CSS", "HTML", "Node.js", "Express"],
-    "collaborators": ["Juan Braian Hernández Morani"],
+    "techs": [
+      "React",
+      "JavaScript",
+      "CSS",
+      "HTML",
+      "Node.js",
+      "Express"
+    ],
+    "collaborators": [
+      "Juan Braian Hernández Morani"
+    ],
     "description": "To-do application developed as a technical assessment, with a React frontend and a Node.js / Express backend.",
     "publicationDate": "2023-10-26T10:00:00.000Z",
     "status": "complete",
-    "category": "Full Stack",
+    "category": "Software",
     "featured": false,
-    "githubRepo": null
+    "githubRepo": null,
+    "visibility": "public",
+    "isDeployed": true
+  },
+  {
+    "id": "mu-kairox-ultimatum",
+    "title": "MU Kairox Ultimatum — Custom Season 16",
+    "link": null,
+    "thumbnail": "/thumbnails/mu-kairox-ultimatum.svg",
+    "techs": [
+      "C++",
+      "C",
+      "Python",
+      "PowerShell",
+      "Pascal"
+    ],
+    "collaborators": [
+      "Juan Braian Hernández Morani"
+    ],
+    "description": "Private reverse-engineering and reconstruction project for a self-hosted MU Online Season 16 environment, focused on rebuilding a validated baseline, integrating custom systems and separating build success from runtime and gameplay acceptance.",
+    "publicationDate": "2026-08-16T19:38:28Z",
+    "status": "active",
+    "category": "Reverse Engineering",
+    "featured": false,
+    "visibility": "private",
+    "isDeployed": false,
+    "repositoryVisibility": "private",
+    "sourceAvailable": false,
+    "techsMode": "declared"
+  },
+  {
+    "id": "zombie-reborn-cs16",
+    "title": "Zombie Reborn — Counter-Strike 1.6",
+    "link": null,
+    "thumbnail": "/thumbnails/zombie-reborn-cs16.svg",
+    "techs": [
+      "Pawn",
+      "AMX Mod X",
+      "Counter-Strike 1.6"
+    ],
+    "collaborators": [
+      "Juan Braian Hernández Morani"
+    ],
+    "description": "Private Counter-Strike 1.6 mod-engineering project extending a verified New Zombie Plague baseline through a controlled Zombie Reborn layer, with emphasis on runtime ownership, compatibility, validation and modular plugin development.",
+    "publicationDate": "2026-07-04T17:55:59Z",
+    "status": "active",
+    "category": "Game Dev",
+    "featured": false,
+    "visibility": "private",
+    "isDeployed": false,
+    "repositoryVisibility": "private",
+    "sourceAvailable": false,
+    "techsMode": "declared"
+  },
+  {
+    "id": "weatherapp",
+    "title": "Weather App",
+    "link": "https://github.com/JuanHernandezMorani/WeatherApp",
+    "thumbnail": "/thumbnails/weatherapp.svg",
+    "techs": [
+      "React",
+      "JavaScript",
+      "CSS",
+      "HTML"
+    ],
+    "collaborators": [
+      "Juan Braian Hernández Morani"
+    ],
+    "description": "Responsive React weather dashboard that consumes OpenWeatherMap data to present weather information through a clean browser interface.",
+    "publicationDate": "2025-04-07T13:53:48Z",
+    "status": "active",
+    "category": "Frontend",
+    "featured": false,
+    "visibility": "public",
+    "isDeployed": false,
+    "githubRepo": "JuanHernandezMorani/WeatherApp",
+    "techsMode": "declared"
+  },
+  {
+    "id": "pokedex-typescript",
+    "title": "Pokédex — TypeScript",
+    "link": "https://github.com/JuanHernandezMorani/pokedex-typescript",
+    "thumbnail": "/thumbnails/pokedex-typescript.svg",
+    "techs": [
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "CSS",
+      "HTML"
+    ],
+    "collaborators": [
+      "Juan Braian Hernández Morani"
+    ],
+    "description": "Typed React Pokédex interface for browsing and presenting Pokémon data, developed as a TypeScript-focused frontend project.",
+    "publicationDate": "2025-04-09T13:27:13Z",
+    "status": "active",
+    "category": "Frontend",
+    "featured": false,
+    "visibility": "public",
+    "isDeployed": false,
+    "githubRepo": "JuanHernandezMorani/pokedex-typescript",
+    "techsMode": "declared"
+  },
+  {
+    "id": "zp508a-gui-builder",
+    "title": "ZP 5.0 GUI Builder",
+    "link": "https://github.com/JuanHernandezMorani/zp508a-gui-builder",
+    "thumbnail": "/thumbnails/zp508a-gui-builder.svg",
+    "techs": [
+      "Pawn",
+      "TypeScript",
+      "JavaScript",
+      "Python",
+      "HTML"
+    ],
+    "collaborators": [
+      "Juan Braian Hernández Morani"
+    ],
+    "description": "Developer tool for Zombie Plague 5.0 and AMX Mod X that provides a UI for defining classes, modes and weapons, generates source/config assets and supports one-click Pawn compilation into deployable plugins.",
+    "publicationDate": "2025-09-18T00:42:57Z",
+    "status": "active",
+    "category": "Tools",
+    "featured": false,
+    "visibility": "public",
+    "isDeployed": false,
+    "githubRepo": "JuanHernandezMorani/zp508a-gui-builder",
+    "techsMode": "declared"
+  },
+  {
+    "id": "minecraftmodtexturegenerator",
+    "title": "Minecraft Texture Variant Generator",
+    "link": "https://github.com/JuanHernandezMorani/MinecraftModTextureGenerator",
+    "thumbnail": "/thumbnails/minecraftmodtexturegenerator.svg",
+    "techs": [
+      "Python"
+    ],
+    "collaborators": [
+      "Juan Braian Hernández Morani"
+    ],
+    "description": "Python asset-pipeline tool that batch-generates themed Minecraft entity texture variants, including diffuse textures, Sobel-based normal maps and optional emissive outputs from configurable masks and overlays.",
+    "publicationDate": "2025-09-21T17:47:43Z",
+    "status": "active",
+    "category": "Tools",
+    "featured": false,
+    "visibility": "public",
+    "isDeployed": false,
+    "githubRepo": "JuanHernandezMorani/MinecraftModTextureGenerator",
+    "techsMode": "declared"
+  },
+  {
+    "id": "zombiesdeop7dtd",
+    "title": "7 Days to Die — Zombie Overhaul Mods",
+    "link": "https://github.com/JuanHernandezMorani/ZombiesDeOP7DtD",
+    "thumbnail": "/thumbnails/zombiesdeop7dtd.svg",
+    "techs": [
+      "C#",
+      "Harmony",
+      "Unity"
+    ],
+    "collaborators": [
+      "Juan Braian Hernández Morani"
+    ],
+    "description": "7 Days to Die C# modding project built around Harmony patching and modular runtime systems, focused on deeper zombie and bunker behavior while preserving compatibility with larger overhaul packs.",
+    "publicationDate": "2025-10-04T20:07:28Z",
+    "status": "active",
+    "category": "Game Dev",
+    "featured": false,
+    "visibility": "public",
+    "isDeployed": false,
+    "githubRepo": "JuanHernandezMorani/ZombiesDeOP7DtD",
+    "techsMode": "declared"
+  },
+  {
+    "id": "dinamicwallpaperwindows",
+    "title": "Dynamic Wallpaper Windows",
+    "link": null,
+    "thumbnail": "/thumbnails/dinamicwallpaperwindows.svg",
+    "techs": [
+      "C#",
+      "WPF",
+      "HLSL",
+      ".NET 7"
+    ],
+    "collaborators": [
+      "Juan Braian Hernández Morani"
+    ],
+    "description": "Private WPF desktop suite for designing dynamic Windows wallpapers with editable effect zones, real-time shader preview, resolution-aware LOD, multithreaded generation and CPU/RAM telemetry.",
+    "publicationDate": "2025-10-09T16:08:18Z",
+    "status": "active",
+    "category": "Software",
+    "featured": false,
+    "visibility": "private",
+    "isDeployed": false,
+    "repositoryVisibility": "private",
+    "sourceAvailable": false,
+    "techsMode": "declared"
+  },
+  {
+    "id": "questgenerator",
+    "title": "Minecraft Quest Generator",
+    "link": null,
+    "thumbnail": "/thumbnails/questgenerator.svg",
+    "techs": [
+      "Python",
+      "Lua",
+      "JavaScript",
+      "CraftTweaker",
+      "PMMO"
+    ],
+    "collaborators": [
+      "Juan Braian Hernández Morani"
+    ],
+    "description": "Private content-generation toolkit for a Minecraft RPG modpack, consolidating quest catalogs and integration data to produce structured quest and configuration assets across interconnected mod systems.",
+    "publicationDate": "2025-10-26T06:40:50Z",
+    "status": "active",
+    "category": "Tools",
+    "featured": false,
+    "visibility": "private",
+    "isDeployed": false,
+    "repositoryVisibility": "private",
+    "sourceAvailable": false,
+    "techsMode": "declared"
+  },
+  {
+    "id": "steamdataextractor",
+    "title": "Steam Data Extractor",
+    "link": null,
+    "thumbnail": "/thumbnails/steamdataextractor.svg",
+    "techs": [
+      "Python",
+      "Steam Web API"
+    ],
+    "collaborators": [
+      "Juan Braian Hernández Morani"
+    ],
+    "description": "Private Python utility that analyzes a Steam library through the Steam API, normalizes owned-game data, estimates storage requirements from store metadata and heuristics, and computes library-level metrics.",
+    "publicationDate": "2025-11-16T23:44:57Z",
+    "status": "active",
+    "category": "Tools",
+    "featured": false,
+    "visibility": "private",
+    "isDeployed": false,
+    "repositoryVisibility": "private",
+    "sourceAvailable": false,
+    "techsMode": "declared"
+  },
+  {
+    "id": "planetcraftermods",
+    "title": "OverhaulCrafter — Planet Crafter Mods",
+    "link": null,
+    "thumbnail": "/thumbnails/planetcraftermods.svg",
+    "techs": [
+      "C#",
+      "BepInEx",
+      "Harmony",
+      "Unity"
+    ],
+    "collaborators": [
+      "Juan Braian Hernández Morani"
+    ],
+    "description": "Private unified BepInEx/Harmony overhaul for The Planet Crafter, combining QoL, RPG progression, NPC and quest foundations, and future combat/trade expansion paths inside one modular plugin.",
+    "publicationDate": "2026-04-08T16:36:21Z",
+    "status": "active",
+    "category": "Game Dev",
+    "featured": false,
+    "visibility": "private",
+    "isDeployed": false,
+    "repositoryVisibility": "private",
+    "sourceAvailable": false,
+    "techsMode": "declared"
+  },
+  {
+    "id": "storefront-change-guard",
+    "title": "Storefront Change Guard",
+    "link": "https://github.com/JuanHernandezMorani/storefront-change-guard",
+    "thumbnail": "/thumbnails/storefront-change-guard.svg",
+    "techs": [
+      "Python",
+      "TypeScript",
+      "PowerShell",
+      "JavaScript",
+      "HTML",
+      "llama.cpp"
+    ],
+    "collaborators": [
+      "Juan Braian Hernández Morani"
+    ],
+    "description": "Local-first AI-assisted code-review prototype for e-commerce storefront changes, combining bounded Git evidence, local model analysis, isolated patch validation and a deterministic readiness policy.",
+    "publicationDate": "2026-06-23T20:58:28Z",
+    "status": "active",
+    "category": "AI & Data",
+    "featured": false,
+    "visibility": "public",
+    "isDeployed": false,
+    "githubRepo": "JuanHernandezMorani/storefront-change-guard",
+    "techsMode": "declared"
+  },
+  {
+    "id": "yolo-train",
+    "title": "YOLOv11 Dual-Head Training",
+    "link": "https://github.com/JuanHernandezMorani/YOLO-train",
+    "thumbnail": "/thumbnails/yolo-train.svg",
+    "techs": [
+      "Python",
+      "PyTorch",
+      "NumPy",
+      "YOLOv11"
+    ],
+    "collaborators": [
+      "Juan Braian Hernández Morani"
+    ],
+    "description": "Computer-vision training project for a custom YOLOv11 dual-head architecture, with dataset configuration, model definition, training pipeline, hardware monitoring and dedicated inference tooling.",
+    "publicationDate": "2025-10-22T01:55:14Z",
+    "status": "active",
+    "category": "AI & Data",
+    "featured": false,
+    "visibility": "public",
+    "isDeployed": false,
+    "githubRepo": "JuanHernandezMorani/YOLO-train",
+    "techsMode": "declared"
+  },
+  {
+    "id": "pyhelper",
+    "title": "PyHelper",
+    "link": "https://github.com/JuanHernandezMorani/pyhelper",
+    "thumbnail": "/thumbnails/pyhelper.svg",
+    "techs": [
+      "Python",
+      "PyPI"
+    ],
+    "collaborators": [
+      "Juan Braian Hernández Morani"
+    ],
+    "description": "Published Python utility library for data analysis, visualization, statistics, file/search helpers and validation workflows, packaged for PyPI with extensive multilingual documentation.",
+    "publicationDate": "2025-08-10T03:33:06Z",
+    "status": "active",
+    "category": "Tools",
+    "featured": false,
+    "visibility": "public",
+    "isDeployed": false,
+    "githubRepo": "JuanHernandezMorani/pyhelper",
+    "techsMode": "declared"
+  },
+  {
+    "id": "ayi-academy-ia-course",
+    "title": "Ayi Academy — AI Specialization",
+    "link": "https://github.com/JuanHernandezMorani/Ayi-Academy-IA-Course",
+    "thumbnail": "/thumbnails/ayi-academy-ia-course.svg",
+    "techs": [
+      "Jupyter Notebook",
+      "Python"
+    ],
+    "collaborators": [
+      "Juan Braian Hernández Morani"
+    ],
+    "description": "Collection of practical AI-specialization work covering data preprocessing, neural networks, deep learning, NLP, computer vision, model training and multimodal/API-oriented exercises.",
+    "publicationDate": "2025-07-21T21:44:15Z",
+    "status": "active",
+    "category": "AI & Data",
+    "featured": false,
+    "visibility": "public",
+    "isDeployed": false,
+    "githubRepo": "JuanHernandezMorani/Ayi-Academy-IA-Course",
+    "techsMode": "declared"
+  },
+  {
+    "id": "full-stack-js-engineer-test-assessment",
+    "title": "Country API — Full-Stack Assessment",
+    "link": "https://github.com/JuanHernandezMorani/Full-Stack-JS-engineer-test-assessment",
+    "thumbnail": "/thumbnails/full-stack-js-engineer-test-assessment.svg",
+    "techs": [
+      "JavaScript",
+      "Next.js",
+      "React",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Sequelize",
+      "Chart.js",
+      "CSS"
+    ],
+    "collaborators": [
+      "Juan Braian Hernández Morani"
+    ],
+    "description": "Full-stack country-information assessment with a Next.js/React client and Express/PostgreSQL backend, providing country browsing, border relationships and population history visualized with Chart.js.",
+    "publicationDate": "2024-10-03T20:02:38Z",
+    "status": "active",
+    "category": "Software",
+    "featured": false,
+    "visibility": "public",
+    "isDeployed": false,
+    "githubRepo": "JuanHernandezMorani/Full-Stack-JS-engineer-test-assessment",
+    "techsMode": "declared"
   }
 ]

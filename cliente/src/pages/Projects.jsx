@@ -32,8 +32,9 @@ function normalizeText(value) {
 }
 
 export default function Projects() {
-  usePageMeta('Projects', 'Public software, frontend, tooling and game-development projects by Juan Braian Hernández Morani.');
+  usePageMeta('Projects', 'Selected public and private software, AI, tooling, reverse-engineering and game-development projects by Juan Braian Hernández Morani.');
   const [category, setCategory] = useState('All');
+  const [visibility, setVisibility] = useState('All');
   const [query, setQuery] = useState('');
   const [filterOpen, setFilterOpen] = useState(false);
   const [languages, setLanguages] = useState([]);
@@ -66,10 +67,12 @@ export default function Projects() {
 
   const filteredProjects = useMemo(() => publicProjects.filter((project) => {
     const categoryMatches = category === 'All' || project.category === category;
+    const projectVisibility = project.visibility || project.repositoryVisibility || 'public';
+    const visibilityMatches = visibility === 'All' || projectVisibility === visibility.toLowerCase();
     const nameMatches = !searchActive || normalizeText(project.title).includes(normalizedQuery);
     const languageMatches = languages.length === 0 || languages.every((language) => project.techs.includes(language));
-    return categoryMatches && nameMatches && languageMatches;
-  }), [category, languages, normalizedQuery, searchActive]);
+    return categoryMatches && visibilityMatches && nameMatches && languageMatches;
+  }), [category, visibility, languages, normalizedQuery, searchActive]);
 
   const toggleLanguage = (language) => {
     setLanguages((current) => {
@@ -90,24 +93,39 @@ export default function Projects() {
       <div className={`page-width ${styles.projectsPage}`}>
         <Reveal>
           <SectionHeading
-            eyebrow="Public work"
+            eyebrow="Selected work"
             title="Projects"
-            description="Browse public software, frontend, tooling and game-development work. Search by project name or narrow the results by category and language."
+            description="Browse selected public and private software, AI, tooling, reverse-engineering and game-development work. Search by project name or narrow the results by category and language."
           />
         </Reveal>
 
         <Reveal delay={80} className={styles.toolbar}>
-          <div className={styles.categoryFilters} aria-label="Filter projects by category">
-            {projectCategories.map((item) => (
-              <button
-                type="button"
-                key={item}
-                className={category === item ? styles.activeFilter : ''}
-                onClick={() => setCategory(item)}
-              >
-                {item}
-              </button>
-            ))}
+          <div className={styles.filterGroups}>
+            <div className={styles.visibilityFilters} aria-label="Filter projects by visibility">
+              {['All', 'Public', 'Private'].map((item) => (
+                <button
+                  type="button"
+                  key={item}
+                  className={visibility === item ? styles.activeFilter : ''}
+                  onClick={() => setVisibility(item)}
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
+
+            <div className={styles.categoryFilters} aria-label="Filter projects by category">
+              {projectCategories.map((item) => (
+                <button
+                  type="button"
+                  key={item}
+                  className={category === item ? styles.activeFilter : ''}
+                  onClick={() => setCategory(item)}
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className={styles.searchAndFilter} ref={filterRef}>

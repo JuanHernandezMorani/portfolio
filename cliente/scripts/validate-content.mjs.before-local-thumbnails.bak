@@ -14,10 +14,6 @@ function isHttps(value) {
   return /^https:\/\//.test(value || '');
 }
 
-function isValidProjectThumbnail(value) {
-  return isHttps(value) || /^\/thumbnails\/[A-Za-z0-9._-]+$/.test(value || '');
-}
-
 function isGithubUrl(value) {
   if (!value) return false;
   try {
@@ -46,7 +42,7 @@ for (const project of projects) {
   if (ids.has(project.id)) errors.push(`Duplicate project id: ${project.id}`);
   ids.add(project.id);
 
-  if (!isValidProjectThumbnail(project.thumbnail)) errors.push(`${project.id}: thumbnail must use https or /thumbnails/<file>`);
+  if (!isHttps(project.thumbnail)) errors.push(`${project.id}: thumbnail must use https`);
 
   if (visibility === 'public') {
     if (!project.link) errors.push(`${project.id}: public project is missing link`);

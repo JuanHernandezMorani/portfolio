@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="810" viewBox="0 0 1440 810">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07101d"/>
+      <stop offset="1" stop-color="#15233a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.85" cy="0.1" r="0.85">
+      <stop offset="0" stop-color="#6fb7ff" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#6fb7ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1440" height="810" fill="url(#bg)"/>
+  <rect width="1440" height="810" fill="url(#glow)"/>
+  <circle cx="1260" cy="50" r="250" fill="none" stroke="#6fb7ff" stroke-opacity="0.16" stroke-width="2"/>
+  <rect x="88" y="84" width="160" height="44" rx="22" fill="#a78bfa" fill-opacity="0.12" stroke="#a78bfa" stroke-opacity="0.35"/>
+  <text x="168" y="113" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#d5c8ff">PRIVATE</text>
+  <text x="88" y="205" font-family="Segoe UI,Arial,sans-serif" font-size="72" font-weight="800" fill="#f5f8fc">SteamDataExtractor</text>
+  <text x="88" y="270" font-family="Segoe UI,Arial,sans-serif" font-size="28" font-weight="700" fill="#6fb7ff">Unassigned</text>
+  <line x1="88" y1="325" x2="960" y2="325" stroke="#ffffff" stroke-opacity="0.12"/>
+  <text x="88" y="385" font-family="Segoe UI,Arial,sans-serif" font-size="24" fill="#b8c5d4">Python</text>
+  <text x="88" y="710" font-family="Segoe UI,Arial,sans-serif" font-size="20" fill="#8291a4">Source code is not publicly available.</text>
+</svg>
