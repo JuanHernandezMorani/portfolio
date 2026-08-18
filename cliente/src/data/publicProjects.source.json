@@ -7,44 +7,47 @@
     "techs": [
       "React",
       "JavaScript",
-      "CSS",
-      "HTML",
-      "Node.js"
+      "Vite",
+      "Web3Forms",
+      "CSS"
     ],
     "collaborators": [
       "Juan Braian Hernández Morani"
     ],
-    "description": "Modern and responsive landing page built with React and Node.js, focused on presenting a product or service through a clear, polished interface.",
+    "description": "Responsive institutional landing page for ALMA BTL, modernized as a frontend-only React/Vite application with accessible navigation, portfolio sections and Web3Forms contact delivery.",
     "publicationDate": "2025-01-14T00:00:00.000Z",
     "status": "complete",
     "category": "Frontend",
     "featured": true,
-    "githubRepo": null,
+    "githubRepo": "JuanHernandezMorani/AlmaLandingPage",
     "visibility": "public",
-    "isDeployed": true
+    "isDeployed": true,
+    "techsMode": "declared"
   },
   {
     "id": "personal-css-utility",
-    "title": "Personal CSS Utility",
+    "title": "CSS Unit Converter",
     "link": "https://calculator-blue-iota.vercel.app/",
     "thumbnail": "/thumbnails/personal-css-utility.png",
     "techs": [
       "React",
       "JavaScript",
+      "Vite",
       "CSS",
-      "HTML"
+      "localStorage"
     ],
     "collaborators": [
       "Juan Braian Hernández Morani"
     ],
-    "description": "A custom utility for calculations and CSS design helpers, created with a simple React interface for testing and generating visual configurations.",
+    "description": "CSS measurement and responsive-design calculator with unit conversion, clamp() generation, fluid typography, breakpoint interpolation, presets, favorites and local history.",
     "publicationDate": "2025-01-28T00:00:00.000Z",
     "status": "complete",
     "category": "Tools",
     "featured": true,
-    "githubRepo": null,
+    "githubRepo": "JuanHernandezMorani/calculator",
     "visibility": "public",
-    "isDeployed": true
+    "isDeployed": true,
+    "techsMode": "declared"
   },
   {
     "id": "epic-adventures-mod",
@@ -106,60 +109,29 @@
     "isDeployed": true
   },
   {
-    "id": "henry-pokemon",
-    "title": "Henry Pokémon — Individual Project",
-    "link": "https://github.com/JuanHernandezMorani/PokemonPageProject",
-    "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739931428/uploads/mdexqxhxktmby9qnuukl.png",
-    "techs": [
-      "React",
-      "Redux",
-      "JavaScript",
-      "CSS",
-      "HTML",
-      "Node.js",
-      "Express",
-      "Sequelize",
-      "PostgreSQL"
-    ],
-    "collaborators": [
-      "Juan Braian Hernández Morani"
-    ],
-    "description": "Pokémon web application with search, filtering and detailed species views, using React on the frontend and Express on the backend.",
-    "publicationDate": "2023-09-25T16:11:42.000Z",
-    "status": "complete",
-    "category": "Software",
-    "featured": false,
-    "githubRepo": "JuanHernandezMorani/PokemonPageProject",
-    "visibility": "public",
-    "isDeployed": false
-  },
-  {
     "id": "henry-dogs",
-    "title": "Henry Dogs — Individual Project",
-    "link": "https://github.com/JuanHernandezMorani/DogsProject",
-    "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1739931461/uploads/lgbkmdjlyzrlxcbaqg5q.png",
+    "title": "Dogs Project",
+    "link": "https://dogs-project-seven.vercel.app/",
+    "thumbnail": "/thumbnails/dogs_project_thumb.png",
     "techs": [
       "React",
-      "Redux",
       "JavaScript",
+      "Vite",
       "CSS",
-      "HTML",
-      "Node.js",
-      "Express",
-      "Sequelize",
-      "PostgreSQL"
+      "localStorage"
     ],
     "collaborators": [
       "Juan Braian Hernández Morani"
     ],
-    "description": "Web project for searching and filtering dog breeds, with detailed breed information and a Node.js / Express backend.",
+    "description": "Responsive dog-breed explorer with search, filtering, sorting, pagination, detailed breed pages and locally persisted custom breed profiles.",
     "publicationDate": "2023-09-25T16:19:50.000Z",
     "status": "complete",
     "category": "Software",
     "featured": false,
     "githubRepo": "JuanHernandezMorani/DogsProject",
     "visibility": "public",
-    "isDeployed": false
+    "isDeployed": true,
+    "techsMode": "declared"
   },
   {
     "id": "company-skill-test",
@@ -244,44 +216,50 @@
     "techs": [
       "React",
       "JavaScript",
+      "Vite",
+      "MET Norway API",
+      "Geoapify",
+      "Vercel Functions",
       "CSS",
-      "HTML"
+      "localStorage"
     ],
     "collaborators": [
       "Juan Braian Hernández Morani"
     ],
-    "description": "Responsive React weather dashboard that consumes OpenWeatherMap data to present weather information through a clean browser interface.",
+    "description": "Responsive weather dashboard with worldwide search, geolocation, 24-hour and seven-day forecasts, backed by MET Norway and Geoapify through server-side Vercel functions.",
     "publicationDate": "2025-04-07T13:53:48Z",
-    "status": "active",
+    "status": "complete",
     "category": "Frontend",
     "featured": false,
     "visibility": "public",
-    "isDeployed": false,
+    "isDeployed": true,
     "githubRepo": "JuanHernandezMorani/WeatherApp",
     "techsMode": "declared"
   },
   {
     "id": "pokedex-typescript",
     "title": "Pokédex — TypeScript",
-    "link": "https://github.com/JuanHernandezMorani/pokedex-typescript",
+    "link": "https://pokedex-typescript-theta.vercel.app/",
     "thumbnail": "/thumbnails/pokedex-typescript.svg",
     "techs": [
       "React",
       "TypeScript",
-      "JavaScript",
+      "Vite",
+      "PokéAPI",
+      "React Router",
       "CSS",
-      "HTML"
+      "localStorage"
     ],
     "collaborators": [
       "Juan Braian Hernández Morani"
     ],
-    "description": "Typed React Pokédex interface for browsing and presenting Pokémon data, developed as a TypeScript-focused frontend project.",
+    "description": "Advanced TypeScript Pokédex with 1,025+ Pokémon, full PokéAPI enrichment, team building, legal movesets, items, natures, forms, evolution data and a deterministic battle simulator.",
     "publicationDate": "2025-04-09T13:27:13Z",
-    "status": "active",
-    "category": "Frontend",
+    "status": "complete",
+    "category": "Software",
     "featured": false,
     "visibility": "public",
-    "isDeployed": false,
+    "isDeployed": true,
     "githubRepo": "JuanHernandezMorani/pokedex-typescript",
     "techsMode": "declared"
   },
