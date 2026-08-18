@@ -2,7 +2,7 @@
   {
     "id": "alma-landing-page",
     "title": "Alma Landing Page",
-    "link": "https://alma-landing-page.vercel.app/",
+    "link": "https://alma-landing-page-w3bf.vercel.app/",
     "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1742077312/uploads/ssjwu819uacymgms11iq.png",
     "techs": [
       "React",
@@ -26,7 +26,7 @@
   {
     "id": "personal-css-utility",
     "title": "Personal CSS Utility",
-    "link": "https://calculator-zeta-two-12.vercel.app/",
+    "link": "https://calculator-blue-iota.vercel.app/",
     "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1742068057/uploads/lbhbjrkd2avsqxrflmww.png",
     "techs": [
       "React",
@@ -239,7 +239,7 @@
   {
     "id": "weatherapp",
     "title": "Weather App",
-    "link": "https://github.com/JuanHernandezMorani/WeatherApp",
+    "link": "https://weather-app-chi-six-37.vercel.app/",
     "thumbnail": "/thumbnails/weatherapp.svg",
     "techs": [
       "React",
