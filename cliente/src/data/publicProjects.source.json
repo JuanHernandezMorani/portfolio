@@ -240,7 +240,7 @@
     "id": "pokedex-typescript",
     "title": "Pokédex — TypeScript",
     "link": "https://pokedex-typescript-theta.vercel.app/",
-    "thumbnail": "/thumbnails/pokedex-typescript.svg",
+    "thumbnail": "/thumbnails/pokedex_thumb.png",
     "techs": [
       "React",
       "TypeScript",
