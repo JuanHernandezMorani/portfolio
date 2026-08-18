@@ -27,7 +27,7 @@
     "id": "personal-css-utility",
     "title": "Personal CSS Utility",
     "link": "https://calculator-blue-iota.vercel.app/",
-    "thumbnail": "https://res.cloudinary.com/dc06uedrr/image/upload/v1742068057/uploads/lbhbjrkd2avsqxrflmww.png",
+    "thumbnail": "/thumbnails/personal-css-utility.png",
     "techs": [
       "React",
       "JavaScript",
@@ -240,7 +240,7 @@
     "id": "weatherapp",
     "title": "Weather App",
     "link": "https://weather-app-chi-six-37.vercel.app/",
-    "thumbnail": "/thumbnails/weatherapp.svg",
+    "thumbnail": "/thumbnails/weatherapp.png",
     "techs": [
       "React",
       "JavaScript",
