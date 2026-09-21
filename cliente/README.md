@@ -109,3 +109,13 @@ The detailed SupporterAI presentation remains in `src/data/privateProjects.js`. 
 ## Deployment
 
 The included `vercel.json` supports SPA routing on Vercel. The Vite production output is generated in `dist/`.
+
+## Bilingual resume
+
+The `/cv` route now supports English and Spanish resume views from the same page.
+
+- English is the default: `/cv`
+- Spanish can be linked directly with `/cv?lang=es`
+- The language selector updates the on-page resume content.
+- **Download PDF** and **Open PDF** always target the PDF that matches the currently displayed language.
+- Resume data lives in `src/data/resume.js` and PDF paths are configured in `src/data/site.js`.

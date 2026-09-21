@@ -1,0 +1,249 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  min-height: var(--header-height);
+  border-bottom: 1px solid var(--border);
+  background: var(--header-bg);
+  backdrop-filter: blur(18px) saturate(150%);
+}
+
+.inner {
+  min-height: var(--header-height);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand {
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.82rem;
+  text-decoration: none;
+}
+
+.logo {
+  width: 3.65rem;
+  height: 3.65rem;
+  object-fit: contain;
+  border-radius: 0.95rem;
+  flex: 0 0 auto;
+}
+
+.brandText {
+  display: grid;
+  min-width: 0;
+}
+
+.brandText strong {
+  color: var(--text);
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.brandText small {
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.nav {
+  order: 2;
+  margin-left: auto;
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.6rem;
+  padding: 0.55rem 0.72rem;
+  border-radius: 0.72rem;
+  color: var(--text-soft);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: background var(--transition), color var(--transition);
+}
+
+.link:hover {
+  color: var(--text);
+  background: var(--surface-soft);
+}
+
+.active {
+  color: var(--text);
+  background: var(--primary-soft);
+}
+
+.actions {
+  order: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.themeButton,
+.menuButton {
+  width: 3rem;
+  height: 3rem;
+  padding: 0.72rem;
+  border: 1px solid var(--border);
+  border-radius: 0.85rem;
+  background: var(--surface-soft);
+  color: var(--text);
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition), transform var(--transition), color var(--transition);
+}
+
+.themeButton:hover,
+.menuButton:hover {
+  transform: translateY(-1px);
+  border-color: var(--border-strong);
+  background: color-mix(in srgb, var(--primary-soft) 45%, transparent);
+}
+
+.themeButton svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.menuButton {
+  display: none;
+}
+
+.menuButton span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 0.28rem 0;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.menuButtonOpen span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menuButtonOpen span:nth-child(2) {
+  opacity: 0;
+}
+
+.menuButtonOpen span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+@media (max-width: 920px) {
+  .menuButton {
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    height: calc(100dvh - var(--header-height));
+    padding: 1rem var(--page-gutter) 2rem;
+    background: var(--header-bg-mobile);
+    transform: translateX(105%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 260ms ease, opacity 220ms ease, visibility 0s linear 260ms;
+    overflow-y: auto;
+    margin-left: 0;
+  }
+
+  .navOpen {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition-delay: 0s;
+  }
+
+  .nav ul {
+    width: min(100%, 34rem);
+    margin-inline: auto;
+    display: grid;
+    align-content: start;
+    gap: 0.55rem;
+  }
+
+  .link {
+    width: 100%;
+    min-height: 3.7rem;
+    justify-content: space-between;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    background: color-mix(in srgb, var(--surface) 45%, transparent);
+    font-size: 1.04rem;
+  }
+
+  .link::after {
+    content: '→';
+    color: var(--primary);
+  }
+}
+
+@media (max-width: 580px) {
+  .logo {
+    width: 3.3rem;
+    height: 3.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brandText small {
+    display: none;
+  }
+
+  .logo {
+    width: 3.08rem;
+    height: 3.08rem;
+  }
+
+  .brandText strong {
+    font-size: 0.92rem;
+  }
+
+  .actions {
+    gap: 0.5rem;
+  }
+
+  .themeButton,
+  .menuButton {
+    width: 3.08rem;
+    height: 3.08rem;
+    padding: 0.66rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .brandText {
+    display: none;
+  }
+
+  .brand {
+    gap: 0;
+  }
+}

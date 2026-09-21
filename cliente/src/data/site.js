@@ -10,7 +10,15 @@ export const site = {
   facebook: 'https://www.facebook.com/Juan.hernandez.morani.97/',
   instagram: 'https://www.instagram.com/elchetomdq97/',
   portfolioUrl: 'https://portfolio-juan-braian-hernandez-moranis-projects.vercel.app/',
-  cvPath: '/Juan_Braian_Hernandez_Morani_CV.pdf'
+  cvPath: '/Juan_Braian_Hernandez_Morani_CV_EN.pdf',
+  cvPaths: {
+    en: '/Juan_Braian_Hernandez_Morani_CV_EN.pdf',
+    es: '/Juan_Braian_Hernandez_Morani_CV_ES.pdf'
+  },
+  cvDownloadNames: {
+    en: 'Juan_Braian_Hernandez_Morani_CV_EN.pdf',
+    es: 'Juan_Braian_Hernandez_Morani_CV_ES.pdf'
+  }
 };
 
 export const navigation = [
